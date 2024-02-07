@@ -5,6 +5,7 @@ import FooterNav from '../../components/footer/FooterNav'
 import PricingCard from '../../components/card/PricingCard'
 import Faq from '../../components/Faq'
 import TradePatner from '../../components/TradePatner'
+import BlogCard from '../../components/features/BlogCard'
 
 const Home = () => {
 
@@ -21,6 +22,11 @@ const Home = () => {
 
 
                 <TradePatner />
+
+
+                 <div>
+                       <BlogCard/>
+                 </div>
 
 
 
