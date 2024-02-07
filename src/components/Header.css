@@ -1,0 +1,13 @@
+.head_sec li.nav-item {
+   
+    padding: 0 30px 0 40px;
+}
+
+.head_sec {
+    padding: 30px 0 20px 0;
+}
+
+.head_sec .nav-link {
+    padding: 10px 40px;
+    border: 3px solid #00910d;
+}

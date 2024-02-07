@@ -1,0 +1,17 @@
+img.candle_img {
+    width: 100%;
+}
+
+.sec_col {
+    padding: 0 0px 0 40px;
+}
+
+img.candle_img {
+    width: 100%;
+    height: 350px;
+}
+
+.news {
+    border: 1px solid;
+    padding: 20px 10px;
+}

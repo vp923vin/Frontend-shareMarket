@@ -1,0 +1,54 @@
+
+
+/* .chart img {
+        height: 365px;
+        width: 600px;
+    } */
+
+   
+
+
+    section.first_dash_page {
+        padding: 50px 10px 50px 40px;
+    }
+
+    div#dashboardContent {
+        padding: 20px 0;
+    }
+
+ 
+
+    .card-body {
+        padding: 10px !important;
+        border: 1px solid #011946
+        ;
+       
+    }
+
+    .card {
+        margin: 10px;
+    }
+
+    h5.card-title {
+        font-size: 18px;
+        color: #000;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    #ticker {
+        position: fixed;
+         bottom: 0;
+          width: 100%;
+          padding: 10px;
+           background-color: #3968ed;
+            color: #fff;
+             text-align: center;
+             font-weight: 700;
+    }
+
+    .trad_page_none {
+        padding: 50px 0;
+    }
