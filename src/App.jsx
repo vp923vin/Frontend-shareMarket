@@ -7,7 +7,11 @@ import Home from './Page/home/Home';
 import LoginPage from './Page/user/LoginPage';
 import Login from './Page/user/Login';
 import Register from './Page/user/Register';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Policy from "./Page/Policy/Policy";
+import "./App.css"
+import Refound from "./Page/Policy/Refound";
+import Terms from "./Page/Policy/Terms";
 function App() {
   return (
     <>
@@ -16,6 +20,9 @@ function App() {
           <Route path='/' element={<LoginPage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path="/policy" element ={<Policy/>}  />
+           <Route path="/refound"  element={<Refound/>} />
+           <Route path="/term" element ={<Terms/>}/>         
           <Route path='/home' element={<Home />} />
           <Route path="/dash" element={<Dashboard />} />
           <Route path="/order" element={<Orderplacetool />} />

@@ -11,9 +11,9 @@ const BlogCard = () => {
 
         <>
 
-            <section className='container bg-[rgb(248 249 250]'>
+            <section className='container'>
 
-                <div className='max-w-xl mx-auto py-5 '>
+                <div className='max-w-xl mx-auto pb-5 '>
                     <h1 class=" text-[#2d333a] text-center py-3 text-2xl md:text-3xl font-bold leading-tight tracking-tigh">
                         <span className='text-blue-600'>  Latest News</span> & Blog
                     </h1>
@@ -22,8 +22,6 @@ const BlogCard = () => {
                         Check out our FAQ page for all the deets. Still not satisfied? Hit us up.
                     </p>
                 </div>
-
-
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                     {
