@@ -1,28 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../components/header/Header'
 import Banner from '../../components/Banner'
 import FooterNav from '../../components/footer/FooterNav'
 import PricingCard from '../../components/card/PricingCard'
 import Faq from '../../components/Faq'
 import TradePatner from '../../components/TradePatner'
+import BlogCard from '../../components/features/BlogCard'
+import ContactForm from '../../components/model/ContactForm'
+import HeaderNav from '../../components/header/HeaderNav'
+import Footer from '../../components/footer/Footer'
+import FeatureVideo from '../../components/features/FeatureVideo'
+import FeatureCardHome from '../../components/features/FeatureCardHome'
 
 const Home = () => {
 
+    const [show, setshow] = useState(false);
 
 
-
+    const handleClose = () => setshow(false);
+    const handleShow = () => setshow(true);
     return (
         <>
-            <Header />
+            <Header show={show} setshow={setshow} />
+            {/* <HeaderNav/> */}
 
             <div>
-                <Banner />
+                <div className='py-32'>
+                    <Banner />
+                </div>
 
 
+                <div className='py-16 bg-gray-800 text-white'>
+
+                    <FeatureVideo />
+
+                </div>
+
+
+                <FeatureCardHome />
 
                 <TradePatner />
-
-
+                <div className='bg-[#F8F9FA]/100 py-16'>
+                    <BlogCard />
+                </div>
 
                 {/* price subscribetion */}
 
@@ -66,12 +86,16 @@ const Home = () => {
 
                 <PricingCard />
 
-
-                <div className='pt-20'>
+                <div className='py-16'>
                     <Faq />
                 </div>
 
+                <ContactForm show={show} onHide={() => handleClose(false)} />
+
+                {/* <Footer/>   */}
                 <FooterNav />
+
+
 
             </div>
         </>

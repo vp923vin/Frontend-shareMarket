@@ -40,7 +40,7 @@ export default function TradePatner() {
 
     return (
         <>
-            <div className="container py-5">
+            <div className="container py-16">
 
                 <h2 className="text-[#2d333a] text-center 
                           py-3 text-2xl md:text-3xl font-bold 
