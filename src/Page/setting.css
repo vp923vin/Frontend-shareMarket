@@ -1,0 +1,69 @@
+
+section.setting_sec {
+    border: 4px solid red;
+    padding: 15px;
+    background-color: #212529;
+    color: #fff;
+    margin: 20px;
+}
+.clas {
+    border: 3px solid blue;
+    background-color: #212529;
+    height: 600px;
+}
+
+
+.head_sec li.nav-item {
+   
+    padding: 0 30px 0 40px;
+}
+
+.head_sec {
+    padding: 15px 0 20px 0;
+}
+
+.head_sec .nav-linkk {
+    padding: 10px 25px;
+    border: 3px solid #00910d;
+}
+
+/* setting css */
+button.money_reset_btn {
+    background: blue;
+    color: #fff;
+    padding: 6px 15px;
+}
+.div_form {
+    display: flex;
+    text-align: justify;
+    /* align-items: flex-end; */
+    border: 1px solid;
+    padding: 59px;
+    margin-top: 50px;
+}
+
+.form-check.form-switch {
+    padding: 0px 16px 17px 26px;
+}
+button.rs_btn {
+    border: 2px solid green;
+    padding: 3px 67px;
+    color: red;
+    font-weight: 600;
+}
+.col-6.max_day {
+    padding-top: 40px;
+}
+button.btn_atm {
+    border: 2px solid green;
+    padding: 3px 36px;
+    margin: 0 10px;
+}
+button.btn_itm {
+    border: 2px solid red;
+    padding: 3px 35px;
+   
+}
+section.third_setting {
+    color: #fff;
+}
