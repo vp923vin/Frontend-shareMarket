@@ -12,20 +12,22 @@ import Policy from "./Page/Policy/Policy";
 import "./App.css"
 import Refound from "./Page/Policy/Refound";
 import Terms from "./Page/Policy/Terms";
+import Setting from "./Page/Setting"
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter> 
         <Routes>
           <Route path='/' element={<LoginPage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path="/policy" element ={<Policy/>}  />
-           <Route path="/refound"  element={<Refound/>} />
-           <Route path="/term" element ={<Terms/>}/>         
+          <Route path="/policy" element={<Policy />} />
+          <Route path="/refound" element={<Refound />} />
+          <Route path="/term" element={<Terms />} />
           <Route path='/home' element={<Home />} />
           <Route path="/dash" element={<Dashboard />} />
           <Route path="/order" element={<Orderplacetool />} />
+          <Route path="/setting" element={<Setting />} />
         </Routes>
 
       </BrowserRouter>
