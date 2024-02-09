@@ -13,23 +13,35 @@ import "./App.css"
 import Refound from "./Page/Policy/Refound";
 import Terms from "./Page/Policy/Terms";
 import Setting from "./Page/Setting"
+import PaymentPage from "./Page/checkout/PaymentPage";
+import AboutPage from "./Page/about/AboutPage";
+import ContactPage from "./Page/contact/ContactPage";
+
+
+
+
 function App() {
   return (
     <>
-      <BrowserRouter> 
-        <Routes>
-          <Route path='/' element={<LoginPage />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path="/policy" element={<Policy />} />
-          <Route path="/refound" element={<Refound />} />
-          <Route path="/term" element={<Terms />} />
-          <Route path='/home' element={<Home />} />
-          <Route path="/dash" element={<Dashboard />} />
-          <Route path="/order" element={<Orderplacetool />} />
-          <Route path="/setting" element={<Setting />} />
-        </Routes>
+      <BrowserRouter>
+  
+          <Routes>
+            <Route path='/' element={<LoginPage />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path="/policy" element={<Policy />} />
+            <Route path="/refound" element={<Refound />} />
+            <Route path="/term" element={<Terms />} />
+            <Route path='/home' element={<Home />} />
+            <Route path="/dash" element={<Dashboard />} />
+            <Route path="/order" element={<Orderplacetool />} />
+            <Route path="/setting" element={<Setting />} />
+             <Route path="/checkout" element={<PaymentPage/>}/>
+             <Route path="/about-us" element={<AboutPage/>}/>
+             <Route path="/contact" element={<ContactPage/>}/>
 
+          </Routes>
+   
       </BrowserRouter>
 
     </>

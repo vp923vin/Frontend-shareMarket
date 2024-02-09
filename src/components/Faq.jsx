@@ -58,6 +58,14 @@ const Faq = () => {
                     <h1 class=" text-[#2d333a] text-center py-3 text-2xl md:text-3xl font-bold leading-tight tracking-tigh">
                        <span className='text-blue-600'>  Frequently Asked</span> Questions
                     </h1>
+                    <div class="flex w-32 mt-1 mb-2 overflow-hidden rounded md:mx-auto md:mb-14">
+                            <div class="flex-1 h-2 bg-blue-200">
+                            </div>
+                            <div class="flex-1 h-2 bg-blue-400">
+                            </div>
+                            <div class="flex-1 h-2 bg-blue-300">
+                            </div>
+                        </div>
 
                     <p className='text-center'>Hey there! Got questions? We've got answers.
                         Check out our FAQ page for all the deets. Still not satisfied? Hit us up.

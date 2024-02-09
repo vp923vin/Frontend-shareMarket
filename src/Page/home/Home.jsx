@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Header from '../../components/header/Header'
 import Banner from '../../components/Banner'
 import FooterNav from '../../components/footer/FooterNav'
@@ -16,12 +16,28 @@ const Home = () => {
 
     const [show, setshow] = useState(false);
 
-
     const handleClose = () => setshow(false);
     const handleShow = () => setshow(true);
+
+    const section1Ref = useRef(null);
+    const section2FaqRef = useRef(null);
+
+    const scrollToSection = (ref) => {
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
-            <Header show={show} setshow={setshow} />
+            <Header
+                show={show}
+                setshow={setshow}
+                section1Ref={section1Ref}
+                section2FaqRef={section2FaqRef}
+                scrollToSection={scrollToSection}
+            />
+
             {/* <HeaderNav/> */}
 
             <div>
@@ -29,13 +45,11 @@ const Home = () => {
                     <Banner />
                 </div>
 
-
-                <div className='py-16 bg-gray-800 text-white'>
+                <div className='py-16 bg-gray-800 text-white' ref={section2FaqRef}>
 
                     <FeatureVideo />
 
                 </div>
-
 
                 <FeatureCardHome />
 
@@ -83,8 +97,10 @@ const Home = () => {
                     </div>
 
                 </section>
+                <div ref={section1Ref}>
+                    <PricingCard />
 
-                <PricingCard />
+                </div>
 
                 <div className='py-16'>
                     <Faq />

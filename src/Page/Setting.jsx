@@ -125,7 +125,6 @@ function Setting(props) {
           <div class="col-sm">Running/Stopped</div>
         </div>
 
-
           </div>
         </section>
       </div>

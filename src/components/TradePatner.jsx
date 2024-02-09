@@ -46,8 +46,17 @@ export default function TradePatner() {
                           py-3 text-2xl md:text-3xl font-bold 
                            leading-tight tracking-tigh capitalize">
                     <span className="text-blue-600">Our Trading</span> Partners
-
+ 
                 </h2>
+
+                <div class="flex w-32 mt-1 mb-2 overflow-hidden rounded md:mx-auto ">
+                            <div class="flex-1 h-2 bg-blue-200">
+                            </div>
+                            <div class="flex-1 h-2 bg-blue-400">
+                            </div>
+                            <div class="flex-1 h-2 bg-blue-300">
+                            </div>
+                        </div>
                 <div className="">
                     <Carousel
                         responsive={responsive}

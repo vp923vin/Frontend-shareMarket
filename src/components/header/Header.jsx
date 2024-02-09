@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({show ,setshow}) => {
+const Header = ({ show, setshow, scrollToSection,section2FaqRef, section1Ref }) => {
   return (
     <section>
       <nav className="w-full bg-gray-700">
@@ -13,12 +13,14 @@ const Header = ({show ,setshow}) => {
                 </a>
               </li>
               <li className="border-r pr-2">
-                <a href="#" className=" text-white ">
+              <a onClick ={()=>scrollToSection(section2FaqRef)}className=" text-white ">
                   Why us
                 </a>
               </li>
               <li className="border-r pr-2">
-                <a href="#" className="text-white ">
+                <a
+                  onClick={() => scrollToSection(section1Ref)}
+                  className="text-white ">
                   Pricing
                 </a>
               </li>
@@ -33,10 +35,10 @@ const Header = ({show ,setshow}) => {
                 </a>
               </li>
               <li>
-                <a  
-                 onClick={()=>setshow(!show)}
-                 
-                 className="text-white cursor-pointer ">
+                <a
+                  onClick={() => setshow(!show)}
+
+                  className="text-white cursor-pointer ">
                   Contact
                 </a>
               </li>
