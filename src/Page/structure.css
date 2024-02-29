@@ -1,0 +1,86 @@
+section.structure {
+    /* background: black; */
+    border: 5px solid blue;
+    padding: 10px;
+
+}
+
+
+.box_bullish {
+    border: 3px solid green;
+    padding: 41px;
+    /* color: #fff; */
+    height: 290px;
+}
+
+.box_bullish2222 {
+    border: 3px solid green;
+    padding: 41px;
+    /* color: #fff; */
+    height: 290px;
+    margin-top: 28px;
+}
+
+
+
+.advance_border {
+    border: 3px solid rgb(122, 122, 16);
+    height: 290px;
+}
+
+.bor {
+    border: 3px solid green;
+    height: 240px;
+    width: 30px;
+    margin: 25px;
+}
+
+.vorrr {
+    border: 2px solid rgb(122, 122, 16);
+    /* height: 206px; */
+    margin-left: 45px;
+    height: 208px;
+    margin-top: 27px;
+}
+
+.yellow_bor {
+    border: 3px solid rgb(122, 122, 16);
+    height: 325px;
+}
+
+.yello_vorrrn {
+    border: 2px solid green;
+    height: 255px;
+    margin: 10px;
+    width: 235px;
+}
+
+.green_bor_redd {
+    border: 2px solid red;
+    height: 255px;
+    margin: 10px;
+    width: 235px;
+}
+
+.gainers_p {
+    margin-top: 50px;
+    /* color: #fff; */
+}
+
+
+.advance_border222 {
+    border: 3px solid rgb(122, 122, 16);
+    height: 290px;
+    margin-top: 30px;
+}
+
+p.p_mrkt {
+    /* color: #fff; */
+}
+
+img.struct_img {
+    width: 40px;
+    float: inline-end;
+    /* background: aliceblue; */
+    margin: 10px;
+}

@@ -11,3 +11,30 @@
     padding: 10px 25px;
     border: 3px solid #00910d;
 }
+.btn{
+
+    color: var(--bs-btn-hover-color);
+    /* background-color: var(--bs-btn-hover-bg); */
+    /* border-color: var(--bs-btn-hover-border-color); */
+}
+
+.dropdown-menu.show {
+    
+    top: 5px !important;
+    background: #fff;
+    color:#000;
+    padding: 20px 10px;
+}
+
+.dropdown-item {
+    
+    color: #000;
+   
+}
+
+.dropdown-divider {
+    
+    display: none;
+}
+
+

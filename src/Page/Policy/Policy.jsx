@@ -183,7 +183,7 @@ const Policy = () => {
             </Helmet>
 
               <Header/>
-            <section className='py-[50px] sm:py-[62px] bg-[#F8F9FA]/100'>
+            <section className='py-[50px] sm:py-[62px]'>
                 <div className='mx-auto sm:px-0 px-5'>
                     <h1 class=" text-[#2d333a] text-center py-3 text-2xl md:text-3xl font-bold leading-tight tracking-tigh">
                         <span className='text-blue-600'> Privacy</span> Policy

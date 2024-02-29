@@ -22,7 +22,7 @@ const ContactPage = () => {
                             </div>
                         </div>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, qui doloribus atque animi vitae sapiente corporis maiores et laudantium repellendus temporibus eum ipsum quasi, dolorem magnam non voluptas enim molestiae.</p>
+                        <p>Lorem ipsum dol  or sit amet consectetur adipisicing elit. Beatae, qui doloribus atque animi vitae sapiente corporis maiores et laudantium repellendus temporibus eum ipsum quasi, dolorem magnam non voluptas enim molestiae.</p>
                     </div>
                     <div class="max-w-6xl mx-auto">
                         <div class="flex flex-col-reverse py-8 -mx-10 md:-mx-5 lg:flex-row 2xl:py-40">
@@ -104,12 +104,23 @@ const ContactPage = () => {
                                     </div>
                                 </div>
 
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235526.9495847478!2d75.699033217425!3d22.72420499950336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1707716159083!5m2!1sen!2sin"
+                                        width="100%" height="400"
+                                        style={{ "border": "0" }} allowfullscreen="true"
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade">
+
+                                    </iframe>
+                                </div>
 
                             </div>
 
                         </div>
                     </div>
                 </div>
+
             </section>
 
 

@@ -1,0 +1,44 @@
+.user {
+    padding: 20px 0;
+}
+
+input {
+    padding: 5px 10px;
+    border: 3px solid #1227a4;
+}
+
+.my_plan {
+    border: 3px solid #1227a4;
+    padding: 70px 20px;
+    margin: 0;
+}
+
+.profile_page {
+    /* background-color: #212529; */
+    padding: 50px 0;
+}
+
+.container.button_off {
+    padding: 50px 230px;
+}
+
+input {
+    padding: 5px 10px;
+    border: 3px solid #1227a4;
+    background: transparent;
+
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: end;
+}
+
+.menu li {
+    list-style: none;
+    padding: 0 10px;
+}

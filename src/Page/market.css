@@ -1,0 +1,50 @@
+.back_colour {
+    background-color: #212529;
+    color: #fff;
+    height: 720px;
+    width: 100%;
+}
+
+th.th_border {
+    border-Right: 1px solid #ccc;
+    background-color: #212529;
+    color: #fff;
+}
+th.th_border_red {
+    border-Right: 1px solid #ccc;
+    background-color: #212529;
+    color: red;
+}
+
+td.th_border {
+    border-Right: 1px solid #ccc;
+    background-color: #212529;
+    color: #fff;
+}
+
+
+table.table {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid hwb(0 80% 20%);
+    margin-top: 40px;
+}
+
+tr.table_row {
+    border-bottom: 1px solid #ccc;
+}
+img.market_profile {
+    width: 45px;
+    float: inline-end;
+}
+button.mrkt_btn {
+    border: 3px solid blue;
+    padding: 5px;
+}
+button.myfolio_btn {
+    border: 3px solid blue;
+    padding: 5px;
+    margin-left: 20px;
+}
+h4.trade_head {
+    padding: 20px 56px;
+}
