@@ -8,7 +8,7 @@ export default function TradePatner() {
 
     const getDatatrade = async () => {
         try {
-            const response = await axios.get("https://scripts.bulleyetrade.com/api/getMarket");
+            const response = await axios.get("https://skycommodity.com/api/getMarket");
             settradedata(response.data.Data);
         } catch (error) {
             console.error("Error fetching data:", error);

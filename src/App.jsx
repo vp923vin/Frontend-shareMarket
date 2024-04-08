@@ -37,9 +37,9 @@ function App() {
   return (
     <>
 
-      <button
+      {/* <button
         className="bg-gray-700 px-3 py-1 rounded-sm text-white"
-        onClick={toggleTheme}>Toggle Mode</button>
+        onClick={toggleTheme}>Toggle Mode</button> */}
       <Routes>
         <Route path='/' element={<LoginPage />} />
         <Route path='/login' element={<Login />} />
@@ -54,7 +54,6 @@ function App() {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/help" element={<Help />} />
         <Route path="/referral" element={<MyReferralPage />} />
-
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/order" element={<Orderplacetool />} />

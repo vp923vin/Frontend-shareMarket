@@ -48,12 +48,12 @@ const Home = () => {
                 <div className='py-16 bg-gray-800 text-white' ref={section2FaqRef}>
 
                     <FeatureVideo />
-
                 </div>
 
                 <FeatureCardHome />
 
-                <TradePatner />
+                {/* <TradePatner /> */}
+
                 <div className='bg-[#F8F9FA]/100 py-16'>
                     <BlogCard />
                 </div>
