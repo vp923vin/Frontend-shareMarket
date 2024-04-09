@@ -68,6 +68,7 @@ function App() {
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
 
         <Route path="/acc" element={<Accordition />} />
+        
       </Routes>
 
 

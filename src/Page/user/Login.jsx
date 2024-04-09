@@ -66,23 +66,23 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center h-screen">
       <form className="max-w-sm mx-auto w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md p-4 md:p-8 ">
-        <h1 className='text-[#2d333a] text-center font-bold text-2xl md:text-4xl mb-3'>Welcome back</h1>
+        <h1 className='  text-center   text-2xl  mb-4'>Sign in to start your session</h1>
         <div className="mb-3">
-          <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+          <label htmlFor="email" className="block mb-2 text-sm font-medium ">Your Email</label>
           <input
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
             type="email"
             id="email"
             className="shadow-sm border border-gray-900 text-sm rounded block w-full p-2.5 "
-            placeholder="name@flowbite.com"
+            placeholder="Emal123@example.com"
             required
           />
           {errors.userEmail && <p className="text-red-500 text-xs">{errors.userEmail}</p>}
         </div>
 
         <div className="mb-3 ">
-          <label htmlFor="repeat-password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
+          <label htmlFor="repeat-password" className="block mb-2 text-sm font-medium ">Password</label>
 
           <div className='relative'>
             <input
@@ -90,8 +90,8 @@ const Login = () => {
               onChange={(e) => setUserPassword(e.target.value)}
               type={showPassword ? 'text' : 'password'}
               id="repeat-password"
-              className="shadow-sm bg-gray-50 border border-gray-300 text-sm rounded block w-full p-2.5 dark:shadow-sm-light"
-              placeholder='password'
+              className="shadow-sm  border border-gray-300 text-sm rounded block w-full p-2.5 dark:shadow-sm-light"
+              placeholder='Password'
               required
             />
             {errors.userPassword && <p className="text-red-500 text-xs">{errors.userPassword}</p>}
@@ -105,7 +105,7 @@ const Login = () => {
         </div>
 
         <div className="flex items-start mb-5">
-          <label htmlFor="terms" className="ms-2 text-sm text-gray-900 ">Don't have an account? <Link to="/register" className="text-blue-600 hover:underline dark:text-blue-500">Sign up</Link></label>
+          <label htmlFor="terms" className="ms-2 text-sm  ">Don't have an account? <Link to="/register" className="text-blue-600 hover:underline dark:text-blue-500">Sign up</Link></label>
         </div>
         <button
           onClick={handleLoginform}
