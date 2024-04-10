@@ -1,11 +1,7 @@
 import React from 'react'
 import '../blog/blog.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBitcoin } from '@fortawesome/free-brands-svg-icons'
-import { faPen } from '@fortawesome/free-solid-svg-icons'
-
-// import { faPen } from '@fortawesome/free-regular-svg-icons'
-
+import { FaBitcoin } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
 
 const Blog = () => {
     return (
@@ -203,59 +199,59 @@ const Blog = () => {
                                 <h1>Recent Posts</h1>
                                 <div className='recent-post-botm-border'></div>
                                 <div className='mt-4 recent-post-texticon'>
-                                    <div>
-                                <FontAwesomeIcon className='mt-2 me-2 edit-pen-icon' icon={faPen} />
+                                    <div className='editIcon-div'>
+                                        <MdEdit  className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Exchange rate of bitcoin</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                    <div>
-                                <FontAwesomeIcon className='mt-2 me-2 edit-pen-icon' icon={faPen} />
+                                <div className='editIcon-div'>
+                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Fluctuating fortunes of bitcoin</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                    <div>
-                                <FontAwesomeIcon className='mt-2 me-2 edit-pen-icon' icon={faPen} />
+                                <div className='editIcon-div'>
+                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>New world wide payment system</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                    <div>
-                                <FontAwesomeIcon className='mt-2 me-2 edit-pen-icon' icon={faPen} />
+                                <div className='editIcon-div'>
+                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Balance of payment affects Bitcoin</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                    <div>
-                                <FontAwesomeIcon className='mt-2 me-2 edit-pen-icon' icon={faPen} />
+                                <div className='editIcon-div'>
+                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Demonetisation & Bitcoin exchange</a>
                                 </div>
-                                                            
+
                             </div>
                             {/* recent comments */}
                             <div className='recent-comments mt-5'>
                                 <h1>Recent Comments</h1>
                                 <div className='recent-comments-botm-border'></div>
                                 <div className='mt-4'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Stuart on Ship Your Idea</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Stuart on Happy Ninja</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Stuart on Flying Ninja</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Dan on Ninja Silhouette</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Dan on Premium Quality</a> <hr className='mt-2'></hr>
                                 </div>
                             </div>
@@ -264,11 +260,11 @@ const Blog = () => {
                                 <h1>Archives</h1>
                                 <div className='archives-botm-border'></div>
                                 <div className='mt-4'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>January 2018</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>June 2015</a> <hr className='mt-2'></hr>
                                 </div>
                             </div>
@@ -277,31 +273,31 @@ const Blog = () => {
                                 <h1>Categories</h1>
                                 <div className='categories-botm-border'></div>
                                 <div className='mt-4'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Audio</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Conversion</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Currency</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Exchange</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Finance</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>News</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Videos</a> <hr className='mt-2'></hr>
                                 </div>
                             </div>
@@ -309,19 +305,19 @@ const Blog = () => {
                                 <h1>Meta</h1>
                                 <div className='meta-botm-border'></div>
                                 <div className='mt-4'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Login</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Enteries feed</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>Comments feed</a> <hr className='mt-2'></hr>
                                 </div>
                                 <div className='mt-3'>
-                                    <FontAwesomeIcon className='me-2 blue-bitcoin-icon' icon={faBitcoin} />
+                                    <FaBitcoin className='me-2 blue-bitcoin-icon' />
                                     <a href='#'>WordPress.org</a> <hr className='mt-2'></hr>
                                 </div>
                             </div>

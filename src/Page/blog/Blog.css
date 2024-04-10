@@ -124,17 +124,21 @@
 .blue-bitcoin-icon {
     color: blue;
     height: 22px;
+    float: left;
 }
 .edit-pen-icon{
     padding: 4px 4px;
     background-color: blue;
     border-radius: 22px;
-    height: 12px;
+    height: 60x;
     color: white;
+}
+.editIcon-div{
+    margin-top: -4px;
 }
 .recent-post-texticon{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 /* media querry for less than 992px screen */
