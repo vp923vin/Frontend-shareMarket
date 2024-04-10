@@ -1,0 +1,153 @@
+.blog-sec{
+    padding: 50px 100px;
+}
+.blog-card{
+    border: none;
+}
+.blog-card .card-text{
+    color: gray;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.blog-card-body{
+    border: none;
+    margin: -10px;
+}
+.card-hedd {
+    margin: 15px 0px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.blog-dates{
+    font-weight: 700;
+}
+.read-more-btn a{
+    background: blue;
+    color: white;
+    padding: 12px 25px;
+}
+.read-more-btn a:hover{
+    background: green;
+    color: white;
+    padding: 12px 25px;
+}
+.read-more-btn{
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.recent-post{
+    padding: 0px 30px 10px 10px;
+}
+.recent-post-botm-border{
+    border-bottom: 3px solid black;
+    width: 40px;
+    margin-top: 15px;
+}
+.recent-post h1{
+    font-weight: bold;
+    font-size: 25px;
+}
+.recent-post a{
+    color: grey;
+}
+
+.recent-comments{
+    padding: 0px 30px 10px 10px;
+}
+.recent-comments-botm-border{
+    border-bottom: 3px solid black;
+    width: 40px;
+    margin-top: 15px;
+}
+.recent-comments h1{
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+.recent-comments a{
+    color: grey;
+}
+
+.archives{
+    padding: 0px 30px 10px 10px;
+}
+.archives-botm-border{
+    border-bottom: 3px solid black;
+    width: 40px;
+    margin-top: 15px;
+}
+.archives h1{
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+.archives a{
+    color: grey;
+}
+
+.categories{
+    padding: 0px 30px 10px 10px;
+}
+.categories-botm-border{
+    border-bottom: 3px solid black;
+    width: 40px;
+    margin-top: 15px;
+}
+.categories h1{
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+.categories a{
+    color: grey;
+}
+
+.meta{
+    padding: 0px 30px 10px 10px;
+}
+.meta-botm-border{
+    border-bottom: 3px solid black;
+    width: 40px;
+    margin-top: 15px;
+}
+.meta h1{
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+.meta a{
+    color: grey;
+}
+
+.blue-bitcoin-icon {
+    color: blue;
+    height: 22px;
+}
+.edit-pen-icon{
+    padding: 4px 4px;
+    background-color: blue;
+    border-radius: 22px;
+    height: 12px;
+    color: white;
+}
+.recent-post-texticon{
+    display: flex;
+    align-items: center;
+}
+
+/* media querry for less than 992px screen */
+@media screen and (max-width: 992px) {
+    .blog-sec{
+        padding: 50px 50px;
+    }
+
+    .recent-post,
+    .recent-comments,
+    .archives,
+    .meta,
+    .categories{
+        padding: 0px 0px 10px 10px;
+    }
+}
