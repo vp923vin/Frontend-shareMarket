@@ -100,40 +100,40 @@ const Register = () => {
               </h1>
               <form className="space-y-4 md:space-y-6">
                 <div>
-                  <label htmlFor="text" className="block mb-2 text-sm font-medium  ">Your Name</label>
+                  <label htmlFor="text" className="block mb-2 text-base font-medium  ">Your Name</label>
                   <input type="text"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
-                    name="email" id="email" className="border border-gray-900  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name" required="" />
+                    name="email" id="email" className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name" required="" />
                   {errors.userName && <p className="text-red-500 text-xs">{errors.userName}</p>}
                 </div>
                 <div>
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium  ">Your Email</label>
+                  <label htmlFor="email" className="block mb-2 text-base font-medium  ">Your Email</label>
                   <input
                     value={userEmail}
                     onChange={(e) => setUserEmail(e.target.value)}
                     type='email'
                     required
-                    className="border border-gray-900  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" />
+                    className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" />
                   {errors.userEmail && <p className="text-red-500 text-xs">{errors.userEmail}</p>}
                 </div>
                 <div>
-                  <label htmlFor="mobile" className="block mb-2 text-sm font-medium  ">Your Mobile</label>
+                  <label htmlFor="mobile" className="block mb-2 text-base font-medium  ">Your Mobile</label>
                   <input
                     value={userMobile}
                     onChange={(e) => setUserMobile(e.target.value)}
-                    type="number" name="mobile" id="" className="border border-gray-900  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="mobile number" required="" />
+                    type="number" name="mobile" id="" className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="mobile number" required="" />
                   {errors.userMobile && <p className="text-red-500 text-xs">{errors.userMobile}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="password" className="block mb-2 text-sm font-medium  ">Password</label>
+                  <label htmlFor="password" className="block mb-2 text-base font-medium  ">Password</label>
 
                   <div className='relative'>
                     <input
                       value={userPassword}
                       onChange={(e) => setUserPassword(e.target.value)}
-                      type={showPasswordCurrent ? 'text' : 'password'} name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-gray-50 border border-gray-300  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                      type={showPasswordCurrent ? 'text' : 'password'} name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-gray-50 border border-gray-300  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
                     {errors.userPassword && <p className="text-red-500 text-xs">{errors.userPassword}</p>}
                     <span
                       onClick={togglePasswordVisibilityCurrent}
@@ -148,17 +148,17 @@ const Register = () => {
                   <div className="flex items-center h-5">
                     <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300  dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
                   </div>
-                  <div className="ml-3 text-sm">
+                  <div className="ml-3 text-base">
                     <label htmlFor="terms" className="font-light ">I accept the <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
                   </div>
                 </div>
                 <button
                   onClick={handleFormData}
-                  type="submit" className="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
-                {userError && <p className="text-red-500 text-sm text-center">{userError}</p>}
+                  type="submit" className="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-base px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
+                {userError && <p className="text-red-500 text-base text-center">{userError}</p>}
 
 
-                <p className="text-sm font-light  ">
+                <p className="text-base text-center font-light  ">
                   Already have an account?
                    <Link to="/login" className="font-medium  underline text-blue-600 pl-1">Login here</Link>
                 </p>

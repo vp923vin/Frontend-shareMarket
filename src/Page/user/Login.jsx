@@ -68,21 +68,21 @@ const Login = () => {
       <form className="max-w-sm mx-auto w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md p-4 md:p-8 ">
         <h1 className='  text-center   text-2xl  mb-4'>Sign in to start your session</h1>
         <div className="mb-3">
-          <label htmlFor="email" className="block mb-2 text-sm font-medium ">Your Email</label>
+          <label htmlFor="email" className="block mb-2 text-base font-medium"> Email</label>
           <input
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
             type="email"
             id="email"
-            className="shadow-sm border border-gray-900 text-sm rounded block w-full p-2.5 "
-            placeholder="Emal123@example.com"
+            className="shadow-sm border border-gray-900 text-base rounded block w-full p-2.5 "
+            placeholder="Enter your email"
             required
           />
           {errors.userEmail && <p className="text-red-500 text-xs">{errors.userEmail}</p>}
         </div>
 
         <div className="mb-3 ">
-          <label htmlFor="repeat-password" className="block mb-2 text-sm font-medium ">Password</label>
+          <label htmlFor="repeat-password" className="block mb-2 text-base font-medium ">Password</label>
 
           <div className='relative'>
             <input
@@ -90,7 +90,7 @@ const Login = () => {
               onChange={(e) => setUserPassword(e.target.value)}
               type={showPassword ? 'text' : 'password'}
               id="repeat-password"
-              className="shadow-sm  border border-gray-300 text-sm rounded block w-full p-2.5 dark:shadow-sm-light"
+              className="shadow-sm  border border-gray-300 text-base rounded block w-full p-2.5 dark:shadow-sm-light"
               placeholder='Password'
               required
             />
@@ -104,16 +104,22 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="flex items-start mb-5">
-          <label htmlFor="terms" className="ms-2 text-sm  ">Don't have an account? <Link to="/register" className="text-blue-600 hover:underline dark:text-blue-500">Sign up</Link></label>
+        <div class="flex justify-end me-4">
+        <Link to="#" className="text-blue-600 underline">Forget Password </Link>
         </div>
+
         <button
           onClick={handleLoginform}
           type="submit"
-          className="w-full text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          className="w-full mt-3 text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         >
           Sign In
         </button>
+
+
+
+        <p className="ms-2 text-base  text-center my-3">Don't have an account? <Link to="/register" className="text-blue-600 underline ">Sign up</Link></p>
+
 
         {userError && <p className="text-red-500 text-sm text-center">{userError}</p>}
 

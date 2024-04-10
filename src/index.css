@@ -8,8 +8,12 @@
 
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
+
     font-weight: 300;
-    font-style: normal;
-    color: #2d333a;
+    font-size: 1rem ;
+    line-height: 1.5rem;
+    /* color: #545454; */
+    color: black;
+
 }
