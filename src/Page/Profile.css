@@ -2,10 +2,10 @@
     padding: 20px 0;
 }
 
-input {
+/* input {
     padding: 5px 10px;
     border: 3px solid #1227a4;
-}
+} */
 
 .my_plan {
     border: 3px solid #1227a4;
@@ -22,16 +22,16 @@ input {
     padding: 50px 230px;
 }
 
-input {
+/* input {
     padding: 5px 10px;
     border: 3px solid #1227a4;
     background: transparent;
 
-}
+} */
 
-input::placeholder {
+/* input::placeholder {
     color: #fff;
-}
+} */
 
 .menu ul {
     display: flex;
