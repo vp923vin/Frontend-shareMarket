@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 export const ContextApi = createContext();
 
 const UseContext = ({ children }) => {
+
     const [theme, setTheme] = useState('dark');
 
     const toggleTheme = () => {
@@ -12,6 +13,7 @@ const UseContext = ({ children }) => {
     };
 
     const navigate = useNavigate();
+    
 
     const handleLogout = async () => {
 
@@ -51,4 +53,5 @@ const UseContext = ({ children }) => {
 
 
 export const useContextApi = () => useContext(ContextApi);
+
 export default UseContext;
