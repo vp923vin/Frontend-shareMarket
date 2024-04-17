@@ -6,6 +6,7 @@ import { MdEdit } from "react-icons/md";
 const Blog = () => {
     return (
         <>
+            <div className="blog-sec-bg" ></div>
             <section className='blog-sec'>
                 <div className="container">
                     <div className="row">
@@ -31,10 +32,13 @@ const Blog = () => {
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="card blog-card">
-                                            <img width="780" height="530" src="https://dtdigibit.wpengine.com/wp-content/uploads/2018/01/Blog-3-780x530.jpg" class="attachment-digibit-blog-ii-column size-digibit-blog-ii-column" alt=""></img>
+                                            <img width="780" height="530" src="https://dtdigibit.wpengine.com/wp-content/uploads/2018/01/Blog-2-780x530.jpg" class="attachment-digibit-blog-ii-column size-digibit-blog-ii-column" alt=""></img>
+
+                                            {/* <img width="780" height="530" src="https://dtdigibit.wpengine.com/wp-content/uploads/2018/01/Blog-2-780x530.jpg" class="attachment-digibit-blog-ii-column size-digibit-blog-ii-column wp-post-image"></img> */}
+
                                             <div className="card-body blog-card-body">
                                                 <div className='card-hedd'>
-                                                    <a href='#'>Exchange rate of bitcoin</a>
+                                                    <a href='#'>Fluctuating fortunes of Bitcoin</a>
                                                 </div>
                                                 <div className='mt-2 blog-dates'>
                                                     <p>January 17, 2018</p>
@@ -200,31 +204,31 @@ const Blog = () => {
                                 <div className='recent-post-botm-border'></div>
                                 <div className='mt-4 recent-post-texticon'>
                                     <div className='editIcon-div'>
-                                        <MdEdit  className='mt-2 me-2 edit-pen-icon' />
+                                        <MdEdit className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Exchange rate of bitcoin</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                <div className='editIcon-div'>
-                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
+                                    <div className='editIcon-div'>
+                                        <MdEdit className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Fluctuating fortunes of bitcoin</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                <div className='editIcon-div'>
-                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
+                                    <div className='editIcon-div'>
+                                        <MdEdit className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>New world wide payment system</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                <div className='editIcon-div'>
-                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
+                                    <div className='editIcon-div'>
+                                        <MdEdit className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Balance of payment affects Bitcoin</a>
                                 </div>
                                 <div className='mt-4 recent-post-texticon'>
-                                <div className='editIcon-div'>
-                                    <MdEdit  className='mt-2 me-2 edit-pen-icon' />
+                                    <div className='editIcon-div'>
+                                        <MdEdit className='mt-2 me-2 edit-pen-icon' />
                                     </div>
                                     <a href='#'>Demonetisation & Bitcoin exchange</a>
                                 </div>
