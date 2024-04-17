@@ -1,0 +1,234 @@
+.blog-sec-bg {
+    background-image: url(https://dtdigibit.wpengine.com/wp-content/themes/digibit/images/breadcrumb-bgimage.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 150px;
+}
+
+.blog-sec-bg h1 {
+    font-size: 40px;
+}
+
+.blog-singlepage-main-sec {
+    padding: 80px 115px;
+}
+
+.finance-news-btns {
+    margin: 20px 0px;
+}
+
+.finance-news-btns a {
+    background-color: blue;
+    color: white;
+    padding: 7px 20px;
+    margin-right: 10px;
+}
+
+.finance-news-btns a:hover {
+    background-color: green;
+}
+
+.sec-2 {
+    display: flex;
+}
+
+.sec-2-div-1 {
+    display: flex;
+}
+
+.sec-2-div-2 {
+    display: flex;
+}
+
+.icons-details {
+    display: flex;
+    margin-right: 10px;
+}
+
+.icons-details a {
+    border: 1px solid gray;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.iconss {
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.iconss svg {
+    color: white;
+}
+
+.blog-single-txt p {
+    color: gray;
+    line-height: 32px;
+}
+
+.blog-single-txt span {
+    background: black;
+    padding: 11px 16px;
+    color: white;
+    margin-right: 10px;
+}
+
+.purus_txtList h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 33px;
+}
+
+.purus_txtList ol li {
+    color: gray;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.blog_sec_progessBar h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 28px;
+}
+
+.blog_sec_progessBar {
+    padding-left: 40px;
+}
+
+.progress {
+    height: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1) inset;
+    height: 45px;
+    border-radius: 3px;
+}
+
+.progress-bar {
+    background-color: blue;
+    width: 0;
+    /* This will be dynamically set based on the progress value */
+    transition: width 0.3s ease;
+    height: 45px;
+    text-align: start;
+    padding: 0px 30px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.sec-4 {
+    background-color: #f5f5f5;
+    margin-top: 30px;
+    padding: 60px 35px;
+}
+
+.sec-4 p {
+    color: gray;
+    line-height: 35px;
+    text-align: center;
+}
+
+.sec-5 {
+    margin-top: 35px;
+}
+
+.sec-5 p {
+    margin-bottom: 18px;
+    color: gray;
+    line-height: 30px;
+}
+
+.sec-5 .sec-5-p3 {
+    margin-top: 35px !important;
+}
+
+.signUp-row {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.signUp-row input {
+    border: 1px solid #00000066;
+    padding: 12px 60px 12px 10px;
+}
+
+.signUp-row button {
+    padding: 13px 20px;
+    background-color: blue;
+    color: white;
+}
+
+.signUp-row button:hover {
+    background-color: green;
+}
+
+.signUp-row p:first-child {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.signUp-row p:nth-child(2) {
+    color: gray;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+
+
+/* responsive css */
+@media screen and (max-width: 992px) {
+
+    .blog-singlepage-main-sec {
+        padding: 80px 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog_sec_progessBar {
+        padding-left: unset;
+    }
+
+    .sec-2 {
+        display: unset;
+    }
+
+    .sec-2-div-2 {
+        margin-top: 20px;
+    }
+
+    .signUp-row button {
+        padding: 13px 15px;
+    }
+
+    .signUp-row input {
+        padding: 12px 30px 12px 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .blog-singlepage-main-sec {
+        padding: 80px 10px;
+    }
+    .signUp-row {
+        padding: 40px 5px;
+    }
+    .signUp-row button {
+        padding: 13px 10px;
+        font-size: 12px;
+    }
+
+    .signUp-row input {
+        padding: 12px 10px 12px 10px;
+        font-size: 12px;
+    }
+    
+}
