@@ -17,6 +17,7 @@ import PaymentPage from "./Page/checkout/PaymentPage";
 import AboutPage from "./Page/about/AboutPage";
 import ContactPage from "./Page/contact/ContactPage";
 import Blog from "./Page/blog/Blog";
+import BlogSinglePage from "./Page/blog/BlogSinglePage";
 import Feedback from "./Page/Feedback";
 import Help from "./Page/Help";
 import MyReferralPage from "./Page/MyReferralPage ";
@@ -53,6 +54,7 @@ function App() {
         
         <Route path="/about-us" element={<AboutPage />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blogSinglePage" element={<BlogSinglePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/help" element={<Help />} />
