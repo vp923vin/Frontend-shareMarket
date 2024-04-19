@@ -1,9 +1,11 @@
 import React from 'react'
+import '../about/About.css';
+
 
 const AboutPage = () => {
     return (
         <>
-            <section class="flex items-center  lg:h-screen font-poppins ">
+            {/* <section class="flex items-center  lg:h-screen font-poppins ">
                 <div class="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
                     <div class="px-4 mb-10 md:text-center md:mb-20">
                         <p class="mb-2 text-lg font-semibold text-blue-500 ">
@@ -74,10 +76,7 @@ const AboutPage = () => {
                                     Successful Growth for business
                                 </li>
                             </ul>
-                            {/* <a href="#"
-                                class="px-4 py-2 text-gray-100 bg-green-500 rounded-md ">
-                                Learn more
-                            </a> */}
+                           
                         </div>
                         <div class="relative w-full px-4 mb-10 md:w-1/2 lg:mb-0">
                             <img src="https://i.postimg.cc/HsSPvTq8/pexels-fauxels-3184357.jpg"
@@ -137,6 +136,54 @@ const AboutPage = () => {
                                 </svg>
                             </div>
                         </div>+
+                    </div>
+                </div>
+            </section> */}
+
+            <div className="about-sec-bg" ></div>
+            <section className='about-sec-1'>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-6 about-sec-1-col1">
+                            <h1>About Bit<span>Coin</span> </h1>
+                            <p> Lorem ipsum dolor sit amet, ac donec hendrerit mi, fermentum ultricies, pellentesque harum luctus ut varius. Maecenas lacust ipsum mi.</p>
+                            <ul>
+                                <li>you can exchange your bitcoin by eth.</li>
+                                <li>best profite bitco.exge for all over the world.</li>
+                                <li>we take a big missoin for growth business.</li>
+                                <li>we have top lavel bitcoin experts</li>
+                            </ul>
+                            <button>Read More</button>
+                        </div>
+                        <div className="col-6">
+                            <img src="images/bitcoin-about-banner.jpg" alt="photo-md" class="img-shadow"></img>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className='about-sec-2'>
+                <div className="container">
+                    <div className='about-sec-2-hed'>
+                        <h1>WHY CHOOSE US</h1>
+                        <p>Sed ut perspi ciatis unde omnis iste natus error sit volup tatem accusa ntium dolor emque lauda ntium, totam rem aperiam</p>
+                    </div>
+                    <div className="row about-sec-2-row">
+                        <div className="col-4 about-sec-2-col">
+                            <img src="images/box-icon-f.png" alt="photo-md"></img>
+                            <h1>Payment Options</h1>
+                            <p>Morbi eget varius risus, ut venenatis libero pellentesque in porta dui.</p>
+                        </div>
+                        <div className="col-4 about-sec-2-col">
+                            <img src="images/box-icon-g.png" alt="photo-md"></img>
+                            <h1>Strong Security</h1>
+                            <p>Morbi eget varius risus, ut venenatis libero pellentesque in porta dui.</p>
+                        </div>
+                        <div className="col-4 about-sec-2-col">
+                            <img src="images/box-icon-h.png" alt="photo-md"></img>
+                            <h1>Words Coverage</h1>
+                            <p>Morbi eget varius risus, ut venenatis libero pellentesque in porta dui.</p>
+                        </div>
                     </div>
                 </div>
             </section>
