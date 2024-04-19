@@ -1,0 +1,53 @@
+.about-sec-bg {
+    background-image: url(https://dtdigibit.wpengine.com/wp-content/themes/digibit/images/breadcrumb-bgimage.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 300px;
+}
+.about-sec-1{
+    padding: 50px 90px;
+}
+.about-sec-1-col1 h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 23px;
+    margin-top: 15px;
+}
+.about-sec-1-col1 span{
+    color: blue;
+}
+.about-sec-1-col1 p{
+    line-height: 30px;
+    color: gray;
+    margin-bottom: 10px;
+}
+.about-sec-1-col1 ul{
+    list-style:disc;
+    padding: 20px 20px;
+    color: gray;
+    line-height: 34px;
+}
+.about-sec-1-col1 button{
+    background-color: blue;
+    padding: 8px 30px;
+    color: white;
+}
+.about-sec-1-col1 button:hover{
+    background-color: green;
+}
+
+.about-sec-2{
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 80px 100px;
+}
+.about-sec-2-row img{
+    height: 55px;
+}
+.about-sec-2-hed h1{
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
