@@ -1,38 +1,42 @@
 .user {
     padding: 20px 0;
 }
-
-/* input {
-    padding: 5px 10px;
+.user input{
+    padding: 10px 25px;
+    background-color: transparent;
     border: 3px solid #1227a4;
-} */
-
+}
 .my_plan {
     border: 3px solid #1227a4;
     padding: 70px 20px;
     margin: 0;
+    margin-top: 33px;
 }
 
 .profile_page {
-    /* background-color: #212529; */
-    padding: 50px 0;
+    /* height: 100vh; */
+    background-color: #212529;
+    border: 5px solid green;
 }
-
-.container.button_off {
-    padding: 50px 230px;
+.profile_page{
+    padding: 70px 10px;
 }
-
-/* input {
-    padding: 5px 10px;
-    border: 3px solid #1227a4;
-    background: transparent;
-
-} */
-
-/* input::placeholder {
-    color: #fff;
-} */
-
+.input_forms_row img{
+    height: 120px;
+    background-color: white;
+    margin-left: 30px;
+}
+.button_off {
+    padding: 90px 175px;
+    justify-content: center;
+}
+.checkBox-in input{
+    font-size: 30px;
+    margin-top: -4px;
+}
+.checkBox-btn2{
+    padding-left: 100px;
+}
 .menu ul {
     display: flex;
     justify-content: end;
@@ -41,4 +45,37 @@
 .menu li {
     list-style: none;
     padding: 0 10px;
+}
+.footer-menu{
+    position: fixed;
+    bottom: 10px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:1200px) {
+    .checkBox-btn2{
+        padding-left: 35px;
+    }
+    .button_off {
+        padding: 90px 130px;
+    }
+}
+@media screen and (max-width:992px) {
+    .checkBox-btn2{
+        padding-left: 30px;
+    }
+    .button_off {
+        padding: 90px 0px;
+    }
+}
+@media screen and (max-width:576px) {
+    .checkBox-btn2{
+        padding-left: unset;
+    }
+    .button_off {
+        padding: 90px 50px;
+    }
+    .menu ul {
+        justify-content: unset;
+    }
 }
