@@ -2,10 +2,12 @@ import React from "react";
 // import Header from "../components/Header";-
 import "../Page/Profile.css";
 import { useContextApi } from "../components/context/UseContext";
+import { Link } from "react-router-dom";
+
 
 function SwitchCheckbox(props) {
   return (
-    <div className="form-check form-switch">
+    <div className="form-check form-switch checkBox-in">
       <input
         className="form-check-input"
         type="checkbox"
@@ -24,19 +26,19 @@ function SwitchCheckbox(props) {
 
 function Profile(props) {
 
- const {theme}= useContextApi()
+  const { theme } = useContextApi()
 
 
   return (
     <>
-      <section className={`profile_page h-screen relative ${theme}`}>
+      <section className={`profile_page relative ${theme}`}>
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-2">
+          <div className="row align-items-center input_forms_row">
+            <div className="col-lg-2">
               <img src="public/images/profilee.png" alt="profile" />
             </div>
-            <div className="col-12 col-lg-8 col-md-8">
-              <form action="">
+            <div className="col-12 col-lg-8">
+              <form action="" className="profile-form">
                 <div className="row">
                   <div className="user">
                     <input type="text" name="user" placeholder="User Name" />
@@ -94,13 +96,53 @@ function Profile(props) {
                 </div>
               </form>
             </div>
-            <div className="col-2">
+            <div className="col-lg-2">
               <p className="my_plan">My Plan validity deatils</p>
             </div>
           </div>
+
+          {/* <div className=" button_off mt-5"> */}
+          <div className="row button_off">
+            <div className="col-sm-5">
+              <SwitchCheckbox
+                className="live_tr"
+                id="flexSwitchCheckDefault"
+                label="Change to dark theme/Change to light theme"
+              />
+            </div>
+            <div className="col-sm-5 checkBox-btn2">
+              <SwitchCheckbox
+                className="live_tr"
+                id="flexSwitchCheckDefault"
+                label="Disable the scroll on dashboard"
+              />
+            </div>
+          </div>
+        {/* </div> */}
+
+        <div className="container footer-menu">
+          <div className="menu">
+            <ul>
+              <li>My Referral</li>
+              <li>Help</li>
+              <li>
+                <Link to="/about-us">About Us</Link>
+              </li>
+              <li>
+                <Link to="">Feedback</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact Us</Link>
+              </li>
+              <li></li>
+            </ul>
+          </div>
         </div>
 
-        <div className="container button_off">
+
+        </div>
+
+        {/* <div className="container button_off dark">
           <div className="row pt-5 ">
             <div className="col-6">
               <SwitchCheckbox
@@ -119,7 +161,7 @@ function Profile(props) {
           </div>
         </div>
 
-        <div className="container absolute bottom-8 ">
+        <div className="container footer-menu dark">
           <div className="menu">
             <ul>
               <li>My Referral</li>
@@ -129,7 +171,7 @@ function Profile(props) {
               <li>Contact Us</li>
             </ul>
           </div>
-        </div>
+        </div> */}
 
       </section>
     </>

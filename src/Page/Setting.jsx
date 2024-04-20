@@ -1,9 +1,10 @@
 import React from "react";
 import "../Page/setting.css";
+import { useState } from "react";
 import { useContextApi } from "../components/context/UseContext";
 
 
-function SwitchCheckbox(props) {
+function LiveTradeSwitchCheckbox(props) {
   return (
     <div className="form-check form-switch">
       <input
@@ -12,7 +13,24 @@ function SwitchCheckbox(props) {
         role="switch"
         id={props.id}
         checked={props.checked}
-        disabled={props.disabled}
+        onChange={props.onChange}
+      />
+      <label className="form-check-label" htmlFor={props.id}>
+        {props.label}
+      </label>
+    </div>
+  );
+}
+
+function PaperTradeSwitchCheckbox(props) {
+  return (
+    <div className="form-check form-switch">
+      <input
+        className="form-check-input"
+        type="checkbox"
+        role="switch"
+        id={props.id}
+        checked={props.checked}
         onChange={props.onChange}
       />
       <label className="form-check-label" htmlFor={props.id}>
@@ -24,7 +42,26 @@ function SwitchCheckbox(props) {
 
 function Setting(props) {
 
-  const { theme } = useContextApi()
+  const { theme } = useContextApi();
+  const [liveTradeChecked, setLiveTradeChecked] = useState(false);
+  const [paperTradeChecked, setPaperTradeChecked] = useState(false);
+
+  const handleLiveTradeChange = (e) => {
+    setLiveTradeChecked(e.target.checked);
+    // If Live Trade is checked, uncheck Paper Trade
+    if (e.target.checked) {
+      setPaperTradeChecked(false);
+    }
+  };
+
+  const handlePaperTradeChange = (e) => {
+    setPaperTradeChecked(e.target.checked);
+    // If Paper Trade is checked, uncheck Live Trade
+    if (e.target.checked) {
+      setLiveTradeChecked(false);
+    }
+  };
+
   return (
     <>
       <div className={`clas ${theme}`}>
@@ -52,17 +89,21 @@ function Setting(props) {
           <div className="container">
             <div className="row col-12">
               <div className="col-lg-6 col-md-6 col-12 live_tr">
-                <SwitchCheckbox
+                <LiveTradeSwitchCheckbox
                   className="live_tr"
-                  id="flexSwitchCheckDefault"
+                  id="liveTradeflexSwitchCheckDefault"
                   label="Live Trading"
+                  checked={liveTradeChecked}
+                  onChange={handleLiveTradeChange}
                 />
 
                 <div className="col-12 d-flex">
-                  <SwitchCheckbox
+                  <PaperTradeSwitchCheckbox
                     className="paper_tr"
-                    id="flexSwitchCheckDefault"
+                    id="paperTradeflexSwitchCheckDefault"
                     label="Paper Trade"
+                    checked={paperTradeChecked}
+                    onChange={handlePaperTradeChange}
                   />
                   <button className="money_reset_btn">
                     Virtual Money Reset
@@ -83,25 +124,6 @@ function Setting(props) {
                   </div>
                 </div>
               </div>
-
-              {/* <div className="col-lg-6 col-md-6 col-12 div_form">
-             
-                <div className="col-6">
-
-                  <p>Broker Name :</p>
-                  <p>Login ID:</p>
-                  <p>API ID : </p>
-                </div>
-                <div className="col-6">
-                  <p>Connection Name :</p>
-                  <p>Details xxx:</p>
-                  <p>Details xxxx:</p>
-                  <br/>
-                  <button className="save_broker_btn">Save Broker</button>
-                </div>
-<br/>
-              
-              </div> */}
 
               <div className="col-lg-6 col-md-6 col-12 main_div">
                 <p className="broker_p">Broker configuration window</p>
