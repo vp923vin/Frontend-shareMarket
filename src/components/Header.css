@@ -1,19 +1,20 @@
 .head_sec li.nav-item {
    
-    padding: 0 30px 0 40px;
+    padding: 0 10px 0 10px;
 }
 
 .head_sec {
-    padding: 30px 0 20px 0;
+    padding:10px 0 10px 0;
 }
 
 .head_sec .nav-link {
-    padding: 10px 25px;
+    padding: 5px 25px;
     border: 3px solid #00910d;
 }
+
 .btn{
 
-    color: var(--bs-btn-hover-color);
+    /* color: var(--bs-btn-hover-color); */
     /* background-color: var(--bs-btn-hover-bg); */
     /* border-color: var(--bs-btn-hover-border-color); */
 }
@@ -22,15 +23,11 @@
     
     top: 5px !important;
     background: #fff;
-    color:#000;
+   
     padding: 20px 10px;
 }
 
-.dropdown-item {
-    
-    color: #000;
-   
-}
+
 
 .dropdown-divider {
     
