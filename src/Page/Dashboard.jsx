@@ -9,7 +9,7 @@ function Dashboard() {
   const { theme } = useContextApi();
   return (
     <>
-      <div className="  dark:text-white dark:bg-[#212529] h-screen ">
+      <div className="  dark:text-white dark:bg-[#212529] h-full lg:h-screen ">
         <Header />
 
         {/* <section className={`first_dash_page ${theme}`}>
@@ -68,7 +68,7 @@ function Dashboard() {
               <TradingViewChart />
             </div>
             <div>
-              <div className="flex gap-8 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 ">
                 <div className="">
                   <img
                     className="candle_img"

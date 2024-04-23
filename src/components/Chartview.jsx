@@ -1,32 +1,28 @@
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef } from "react";
 
 function TradingViewWidget() {
-  
-  const container = useRef();
+  const container = useRef(null);
 
   useEffect(() => {
     const scriptId = "tradingview-widget-script";
 
-    // Check if the script already exists in the container
-    const existingScript = container.current.querySelector(`#${scriptId}`);
+    if (container.current) {
+      const existingScript = container.current.querySelector(`#${scriptId}`);
 
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.src =
-        "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
-      script.type = "text/javascript";
-      script.async = true;
-      script.innerHTML = `
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.src =
+          "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+        script.type = "text/javascript";
+        script.async = true;
+        script.innerHTML = `
         {
           "symbols": [
-            [
-              "Apple",
-              "AAPL|1D"
-            ]
+            ["Apple", "AAPL|1D"]
           ],
           "chartOnly": false,
-          "width":600 ,
+          "width": 600,
           "height": 240,
           "locale": "en",
           "colorTheme": "dark",
@@ -49,36 +45,26 @@ function TradingViewWidget() {
           "maLength": 9,
           "lineWidth": 2,
           "lineType": 0,
-          "dateRanges": [
-            "1d|1",
-            "1w|7",
-            "1m|30"
-          ]
+          "dateRanges": ["1d|1", "1w|7", "1m|30"]
         }`;
-      container.current.appendChild(script);
+        container.current.appendChild(script);
+      }
     }
 
-    // Clean up function to remove the script when component unmounts
     return () => {
-      const script = container.current.querySelector(`#${scriptId}`);
-      if (script) {
-        script.remove();
+      if (container.current) {
+        const existingScript = container.current.querySelector(`#${scriptId}`);
+        if (existingScript) {
+          container.current.removeChild(existingScript);
+        }
       }
     };
-  }, []);
+  }, []); // dependency array is empty to run only once after component mount
 
   return (
     <div className="tradingview-widget-container" ref={container}>
       <div className="tradingview-widget-container__widget"></div>
-      {/* <div className="tradingview-widget-copyright">
-        <a
-          href="https://www.tradingview.com/"
-          rel="noopener nofollow"
-          target="_blank"
-        >
-          <span className="blue-text">Track all markets on TradingView</span>
-        </a>
-      </div> */}
+      {/* Optional copyright information */}
     </div>
   );
 }
