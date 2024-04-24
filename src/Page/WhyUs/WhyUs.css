@@ -1,0 +1,36 @@
+.whyUsSec-1{
+    padding: 90px 10px;
+}
+.whyUsSecCol1 h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.whyUsSecCol1 p{
+    line-height: 33px;
+    margin-top: 20px;
+}
+.whyUsSecCol1BottomBorder{
+    border-bottom: 3px solid black;
+    width: 45px;
+}
+.whyUsSecCol2 {
+    background-image: url(https://themes.webdevia.com/consulting/wp-content/uploads/2016/05/city-d.jpg?id=2829) !important;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.whyUssec-2col1-Text {
+    background-color: blue;
+    text-align: center;
+    padding: 20px 30px;
+    color: white;
+}
+.whyUssec-2-hed{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    margin-top: 35px;
+}

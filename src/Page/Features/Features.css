@@ -6,10 +6,10 @@
     background-attachment: fixed;
     height: 300px;
 }
-.sec-1{
+.features-sec-1{
     padding: 90px 60px;
 }
-.sec-1Box{
+.features-sec-1Box{
     display: flex;
 }
 .dd{
@@ -18,30 +18,30 @@
     color: white;
     padding: 30px 30px;
 }
-.sec-1text{
+.features-sec-1text{
     padding: 0px 10px;
 }
-.sec-1 h1{
+.features-sec-1 h1{
     font-size: 20px;
     font-weight: bold;
 }
-.sec-2{
+.features-sec-2{
     background-color: black;
     padding: 70px 0px;
     text-align: center;
     display: block;
     color: white;
 }
-.sec-2 h1{
+.features-sec-2 h1{
     font-size: 25px;
     margin-bottom: 20px;
 }
-.sec-2 p{
+.features-sec-2 p{
     color: gray;
     padding: 20px 200px;
     
 }
-.sec-2borderbtm p{
+.features-sec-2borderbtm p{
     border-bottom: 2px solid blue;   
     width: 10px;
 }
