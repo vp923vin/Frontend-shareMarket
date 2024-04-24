@@ -17,6 +17,7 @@ import PaymentPage from "./Page/checkout/PaymentPage";
 import AboutPage from "./Page/about/AboutPage";
 import ContactPage from "./Page/contact/ContactPage";
 import Blog from "./Page/blog/Blog";
+import Features from "./Page/Features/Features";
 import BlogSinglePage from "./Page/blog/BlogSinglePage";
 import Feedback from "./Page/Feedback";
 import Help from "./Page/Help";
@@ -70,6 +71,7 @@ function App() {
         <Route path="/portfolio" element={<Tradyportfolio />} />
         <Route path='/home' element={<Home />} />
         <Route path='/faq' element={<Faq />} />
+        <Route path='/features' element={<Features />} />
 
 
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
