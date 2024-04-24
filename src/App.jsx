@@ -71,7 +71,10 @@ function App() {
         <Route path="/portfolio" element={<Tradyportfolio />} />
         <Route path='/home' element={<Home />} />
         <Route path='/faq' element={<Faq />} />
+
+
         <Route path='/features' element={<Features />} />
+
 
 
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
