@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 const Blog = () => {
     return (
         <>
-            <div className="blog-sec-bg" ></div>
+            <div className="blog-sec-bg" >
+                <h1>Blog</h1>
+            </div>
             <section className='blog-sec'>
                 <div className="container">
                     <div className="row">

@@ -183,11 +183,14 @@ const Policy = () => {
             </Helmet>
 
               <Header/>
+              <div className="blog-sec-bg" >
+                <h1>Privacy & Policy</h1>
+              </div>
             <section className='py-[50px] sm:py-[62px]'>
                 <div className='mx-auto sm:px-0 px-5'>
-                    <h1 class=" text-[#2d333a] text-center py-3 text-2xl md:text-3xl font-bold leading-tight tracking-tigh">
+                    {/* <h1 class=" text-[#2d333a] text-center py-3 text-2xl md:text-3xl font-bold leading-tight tracking-tigh">
                         <span className='text-blue-600'> Privacy</span> Policy
-                    </h1>
+                    </h1> */}
                     <div className='grid grid-col-1 sm:grid-cols-[auto_70%] gap-3'>
                         {/* Question List for Large Devices */}
                         <div className='hidden sm:block bg-gray-700 h-fit'>

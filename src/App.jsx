@@ -17,6 +17,7 @@ import PaymentPage from "./Page/checkout/PaymentPage";
 import AboutPage from "./Page/about/AboutPage";
 import ContactPage from "./Page/contact/ContactPage";
 import Blog from "./Page/blog/Blog";
+import WhyUs from "./Page/WhyUs/WhyUs";
 import Features from "./Page/Features/Features";
 import BlogSinglePage from "./Page/blog/BlogSinglePage";
 import Feedback from "./Page/Feedback";
@@ -51,6 +52,7 @@ function App() {
         <Route path="/term" element={<Terms />} />
         <Route path="/checkout" element={<PaymentPage />} />
         
+        <Route path="/whyUs" element={<WhyUs />} />
         <Route path="/about-us" element={<AboutPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blogSinglePage" element={<BlogSinglePage />} />
