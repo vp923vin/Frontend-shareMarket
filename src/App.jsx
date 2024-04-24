@@ -41,9 +41,7 @@ function App() {
   return (
     <>
 
-      {/* <button
-        className="bg-gray-700 px-3 py-1 rounded-sm text-white"
-        onClick={toggleTheme}>Toggle Mode</button> */}
+     
       <Routes>
         <Route path='/' element={<LoginPage />} />
         <Route path='/login' element={<Login />} />
@@ -79,7 +77,7 @@ function App() {
 
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
 
-        <Route path="/acc" element={<Accordition />} />
+        {/* <Route path="/acc" element={<Accordition />} /> */}
         
       </Routes>
 
