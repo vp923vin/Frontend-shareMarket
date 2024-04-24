@@ -70,7 +70,7 @@ function App() {
         <Route path="/portfolio" element={<Tradyportfolio />} />
         <Route path='/home' element={<Home />} />
         <Route path='/faq' element={<Faq />} />
-
+        
 
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
 

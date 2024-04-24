@@ -2,6 +2,7 @@ import React from "react";
 import "../Page/setting.css";
 import { useState } from "react";
 import { useContextApi } from "../components/context/UseContext";
+import { Link } from "react-router-dom";
 
 
 function LiveTradeSwitchCheckbox(props) {
@@ -70,7 +71,7 @@ function Setting(props) {
             <div className="row">
               <div className="col-lg-12 col-md-12 col-12">
                 <button className="appli_btn">Application Setting</button>
-                <button className="prosetting_btn">Profile Setting</button>
+                <Link to ="/profile" className="prosetting_btn">Profile Setting</Link>
                 <img
                   className="setting_pro_img"
                   src="public/images/profilee.png"

@@ -9,9 +9,8 @@ const UseContext = ({ children }) => {
   const navigate = useNavigate();
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
-
 
   useEffect(() => {
     document.querySelector("html").classList.remove("dark", "light");

@@ -1,72 +1,52 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
-function TradingViewWidget() {
+function Chartview() {
   const container = useRef(null);
 
   useEffect(() => {
-    const scriptId = "tradingview-widget-script";
+    if (container.current) { // Ensure container is not null
+      const script = document.createElement('script');
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+      script.type = 'text/javascript';
+      script.async = true;
+      script.innerHTML = `
+      {
+        "autosize": true,
+       "symbol": "NASDAQ:AAPL",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "dark",
+        "style": "1",
+        "locale": "en",
+        "enable_publishing": false,
+        "save_image": false,
+        "hide_side_toolbar": true,
+       
+        "calendar": false,
+        "support_host": "https://www.tradingview.com"
+      }`;
 
-    if (container.current) {
-      const existingScript = container.current.querySelector(`#${scriptId}`);
+      container.current.appendChild(script);
 
-      if (!existingScript) {
-        const script = document.createElement("script");
-        script.id = scriptId;
-        script.src =
-          "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
-        script.type = "text/javascript";
-        script.async = true;
-        script.innerHTML = `
-        {
-          "symbols": [
-            ["Apple", "AAPL|1D"]
-          ],
-          "chartOnly": false,
-          "width": 600,
-          "height": 240,
-          "locale": "en",
-          "colorTheme": "dark",
-          "autosize": false,
-          "showVolume": false,
-          "showMA": false,
-          "hideDateRanges": false,
-          "hideMarketStatus": false,
-          "hideSymbolLogo": false,
-          "scalePosition": "right",
-          "scaleMode": "Normal",
-          "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
-          "fontSize": "10",
-          "noTimeScale": false,
-          "valuesTracking": "1",
-          "changeMode": "price-and-percent",
-          "chartType": "area",
-          "maLineColor": "#2962FF",
-          "maLineWidth": 1,
-          "maLength": 9,
-          "lineWidth": 2,
-          "lineType": 0,
-          "dateRanges": ["1d|1", "1w|7", "1m|30"]
-        }`;
-        container.current.appendChild(script);
-      }
-    }
-
-    return () => {
-      if (container.current) {
-        const existingScript = container.current.querySelector(`#${scriptId}`);
-        if (existingScript) {
-          container.current.removeChild(existingScript);
+      // Cleanup to prevent duplication or resource leak
+      return () => {
+        if (container.current && container.current.contains(script)) {
+          container.current.removeChild(script);
         }
-      }
-    };
-  }, []); // dependency array is empty to run only once after component mount
+      };
+    }
+  }, []); // Dependency array to ensure it only runs once on mount
 
   return (
-    <div className="tradingview-widget-container" ref={container}>
-      <div className="tradingview-widget-container__widget"></div>
-      {/* Optional copyright information */}
+    <div ref={container}  className="lg:w-[90%] h-[300px] w-full ">
+      
+      {/* <div className="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/" rel="noopener noreferrer" target="_blank">
+          <span className="blue-text">Track all markets on TradingView</span>
+        </a>
+      </div> */}
     </div>
   );
 }
 
-export default TradingViewWidget;
+export default Chartview;
