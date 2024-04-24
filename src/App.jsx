@@ -41,9 +41,7 @@ function App() {
   return (
     <>
 
-      {/* <button
-        className="bg-gray-700 px-3 py-1 rounded-sm text-white"
-        onClick={toggleTheme}>Toggle Mode</button> */}
+     
       <Routes>
         <Route path='/' element={<LoginPage />} />
         <Route path='/login' element={<Login />} />
@@ -71,12 +69,10 @@ function App() {
         <Route path="/portfolio" element={<Tradyportfolio />} />
         <Route path='/home' element={<Home />} />
         <Route path='/faq' element={<Faq />} />
-<<<<<<< HEAD
-        
-=======
+
+
         <Route path='/features' element={<Features />} />
 
->>>>>>> 1920e58604758ac50c89bc75956856a936b83f28
 
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
 
