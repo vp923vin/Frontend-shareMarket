@@ -36,7 +36,7 @@ import { useContextApi } from "./components/context/UseContext";
 
 function App() {
 
-  const { theme, toggleTheme } = useContextApi()
+
 
   return (
     <>
