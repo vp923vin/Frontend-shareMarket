@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Page/scanner.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IoMenuSharp } from "react-icons/io5";
+
 function Scanner() {
 
 
@@ -10,7 +11,7 @@ function Scanner() {
       label: "Nifty 500/Futures",
       sublabels: ["yes bank", "maharastra"]
     },
-    {
+    { 
       label: "Label 2",
       sublabels: ["Sublabel 1", "Sublabel 2"]
     },
@@ -173,9 +174,7 @@ function Scanner() {
             </div>
 
             <div className="col-lg-10 col-md-10 col-12 ps-6 mt-6 lg:ps-16  feature_div">
-
-
-
+              
               <p className="flex items-center mb-2"> Stock passesall of the below filters in
                 <select
                   id="stock-list"

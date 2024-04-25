@@ -33,11 +33,11 @@ import Scanner from "./Page/Scanner";
 import Tradyportfolio from "./Page/Tradyportfolio";
 import Tradymarket from "./Page/Tradymarket";
 import { useContextApi } from "./components/context/UseContext";
-import Accordition from "./Accordition";
+
 
 function App() {
 
-  const { theme, toggleTheme } = useContextApi()
+
 
   return (
     <>
@@ -67,19 +67,16 @@ function App() {
         <Route path="/structure" element={<Structuremarket />} />
         <Route path="/scaner" element={<Scanner />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/tradymarket" element={<Tradymarket />} />
+        <Route path="/  " element={<Tradymarket />} />
         <Route path="/portfolio" element={<Tradyportfolio />} />
         <Route path='/home' element={<Home />} />
         <Route path='/faq' element={<Faq />} />
 
-
         <Route path='/features' element={<Features />} />
-
-
 
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
 
-        {/* <Route path="/acc" element={<Accordition />} /> */}
+       
         
       </Routes>
 

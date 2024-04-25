@@ -4,11 +4,11 @@ import Chartview from "../components/Chartview";
 import Header from "../components/Header";
 import Progressbar from "../components/Progressbar";
 import { useContextApi } from "../components/context/UseContext";
-import FIIDIIChart from "../components/Stockchart/FIIDIIChart";
 import BarChart from "../components/Stockchart/BarChart";
 import TradingViewWidget from "../components/Stockchart/TradingViewWidget";
 
 function Dashboard() {
+
   const { theme } = useContextApi();
 
   return (
@@ -17,7 +17,8 @@ function Dashboard() {
         <div>
           <Header />
 
-          {/* <section className={`first_dash_page ${theme}`}>
+          {
+          /* <section className={`first_dash_page ${theme}`}>
         <div className="container_fluid">
           <div className="row m-0">
             <div className="col-6">
@@ -82,7 +83,8 @@ function Dashboard() {
 
 
                       
-                  /> */}
+                  /> */
+                  }
 
                     <h2 className="text-center text-sm ">
                       FII & DII combined activity for the last 7 days
@@ -91,6 +93,7 @@ function Dashboard() {
                      */}
 
                     <BarChart />
+
                   </div>
                   <div className="border-2 border-red-600 dark:border-blue-600  p-4 dark:text-white">
                     <p>
@@ -127,6 +130,7 @@ function Dashboard() {
             <TradingViewWidget />
           </div>
         </div>
+        
       </div>
     </>
   );
