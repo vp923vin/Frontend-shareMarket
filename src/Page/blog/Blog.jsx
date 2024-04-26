@@ -3,15 +3,60 @@ import '../blog/blog.css';
 import { FaBitcoin } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import Header from '../../components/header/Header';
+import FooterNav from '../../components/footer/FooterNav';
+import { useContextApi } from "../../components/context/UseContext";
+
+
+function SwitchCheckbox(props) {
+    return (
+        <div className="form-check form-switch checkBox-in">
+            <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id={props.id}
+                checked={props.checked}
+                disabled={props.disabled}
+                onChange={props.onChange}
+            />
+            <label className="form-check-label" htmlFor={props.id}>
+                {props.label}
+            </label>
+        </div>
+    );
+}
 
 const Blog = () => {
+
+    const { theme, toggleTheme } = useContextApi();
+
     return (
         <>
+        
+        <Helmet>
+                <title> | Blog</title>
+            </Helmet>
+
+            <Header />
+
+            <section  className={`dark:text-white dark:bg-[#212529]  `}>
             <div className="blog-sec-bg" >
                 <h1>Blog</h1>
             </div>
             <section className='blog-sec'>
                 <div className="container">
+                <SwitchCheckbox
+                            id="themeSwitch"
+                            checked={theme === "dark"}
+                            onChange={toggleTheme}
+                            label={
+                                theme === "light"
+                                    ? "Change to dark theme"
+                                    : "Change to light theme"
+                            }
+                        />
                     <div className="row">
                         <div className="col-md-9">
                             <div className="container">
@@ -331,6 +376,10 @@ const Blog = () => {
                     </div>
                 </div>
             </section>
+            </section>
+
+            <FooterNav />
+
 
         </>
     )

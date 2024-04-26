@@ -1,5 +1,4 @@
 import React from "react";
-// import Header from "../components/Header";-
 import "../Page/Profile.css";
 import { useContextApi } from "../components/context/UseContext";
 import { Link } from "react-router-dom";
