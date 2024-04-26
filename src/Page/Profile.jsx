@@ -144,7 +144,7 @@ function Profile(props) {
                   <Link to="/about-us">About Us</Link>
                 </li>
                 <li>
-                  <Link to="">Feedback</Link>
+                  <Link to="/feedback">Feedback</Link>
                 </li>
                 <li>
                   <Link to="/contact">Contact Us</Link>
