@@ -7,12 +7,12 @@
 }
 
 .light {
-    background-color: var(--background-light);
+    /* background-color: var(--background-light); */
     color: var(--text-light);
 }
 
 .dark {
-    background-color: var(--background-dark);
+    /* background-color: var(--background-dark); */
     color: var(--text-dark);
 } 
 

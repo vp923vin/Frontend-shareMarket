@@ -23,15 +23,14 @@ import BlogSinglePage from "./Page/blog/BlogSinglePage";
 import Feedback from "./Page/Feedback";
 import Help from "./Page/Help";
 import MyReferralPage from "./Page/MyReferralPage ";
-
 import Profile from "./Page/Profile";
 import Faq from "./components/Faq";
-
 import Structuremarket from "./Page/Structuremarket";
-
 import Scanner from "./Page/Scanner";
 import Tradyportfolio from "./Page/Tradyportfolio";
 import Tradymarket from "./Page/Tradymarket";
+
+
 import { useContextApi } from "./components/context/UseContext";
 
 
@@ -42,7 +41,6 @@ function App() {
   return (
     <>
 
-     
       <Routes>
         <Route path='/' element={<LoginPage />} />
         <Route path='/login' element={<Login />} />
@@ -50,7 +48,7 @@ function App() {
         <Route path="/policy" element={<Policy />} />
         <Route path="/refound" element={<Refound />} />
         <Route path="/term" element={<Terms />} />
-        <Route path="/checkout" element={<PaymentPage />} />
+        <Route path="/checkout" element={<PaymentPage />} />    
         
         <Route path="/whyUs" element={<WhyUs />} />
         <Route path="/about-us" element={<AboutPage />} />
@@ -67,7 +65,7 @@ function App() {
         <Route path="/structure" element={<Structuremarket />} />
         <Route path="/scaner" element={<Scanner />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/  " element={<Tradymarket />} />
+        <Route path="/tradymarket" element={<Tradymarket />} />
         <Route path="/portfolio" element={<Tradyportfolio />} />
         <Route path='/home' element={<Home />} />
         <Route path='/faq' element={<Faq />} />
@@ -76,12 +74,8 @@ function App() {
 
         {/* <Route path="/market" element={<Marketplaybook />} /> */}
 
-       
-        
       </Routes>
-
-
-
+      
     </>
   );
 }

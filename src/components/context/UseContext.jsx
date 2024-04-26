@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 export const ContextApi = createContext();
 
 const UseContext = ({ children }) => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const navigate = useNavigate();
 
   const toggleTheme = () => {
