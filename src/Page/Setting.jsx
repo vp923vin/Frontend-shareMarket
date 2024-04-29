@@ -65,13 +65,13 @@ function Setting(props) {
 
   return (
     <>
-      <div className={`clas ${theme}`}>
+      <div className={`clas  dark:text-white  dark:bg-black `}>
         <section className="class">
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-12">
                 <button className="appli_btn">Application Setting</button>
-                <Link to ="/profile" className="prosetting_btn">Profile Setting</Link>
+                <Link to ="/profile" className="prosetting_btn ">Profile Setting</Link>
                 <img
                   className="setting_pro_img"
                   src="public/images/profilee.png"

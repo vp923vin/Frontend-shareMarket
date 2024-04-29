@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
+import { useContextApi } from "../context/UseContext";
 
 const TradingViewWidget = () => {
   const containerRef = useRef();
-
+  const { theme } = useContextApi();
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
@@ -37,7 +38,7 @@ const TradingViewWidget = () => {
       showSymbolLogo: true,
       isTransparent: false,
       displayMode: "adaptive",
-      colorTheme: "dark", // Aap dark ya light theme use kar sakte hain
+      colorTheme: theme, // Aap dark ya light theme use kar sakte hain
       locale: "en",
     });
 

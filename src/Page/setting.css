@@ -27,9 +27,9 @@ button.appli_btn {
     margin-right: 20px;
 }
 
-button.prosetting_btn {
+.prosetting_btn {
     border: 3px solid blue;
-    padding: 0px 10px;
+    padding: 3px 10px;
     /* color: #fff; */
 }
 
@@ -145,8 +145,8 @@ button.save_broker_btn {
         margin-top: 10px;
     }
 
-    button.prosetting_btn {
-        padding: 0px 6px;
+    prosetting_btn {
+        padding: 3px 6px;
     }
 
     button.money_reset_btn {
