@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Orderplace.css";
 import TradingViewChart from "../components/Chartview";
 import { useContextApi } from "./context/UseContext";
+import FlashTradeview from "./Stockchart/FlashTradeview";
 
 function Orderplacetool() {
   const { theme } = useContextApi()
@@ -17,7 +18,7 @@ function Orderplacetool() {
 
   return (
     <>
-      <section className={`order_tool_first ${theme}`}>
+      <section className={`order_tool_first dark:text-white  dark:bg-black  `}>
         <div className="row">
           <div className="col-12 col-lg-2 col-md-2">
             <h5 className="flas_mode">Flash Mode</h5>
@@ -72,6 +73,7 @@ function Orderplacetool() {
                     <button className="btn_setlot">BUY PE</button>
                     <button className="btn_indx">SELL PE</button>
                   </div>
+
                 </div>
                 <div className="d-flex">
                   <div className="col-6 buyy">
@@ -170,9 +172,10 @@ function Orderplacetool() {
               </div>
 
               {/* chart */}
+              
               <div className="col-md-6 col-lg-6 col-12">
                 <div className="chart">
-                  <TradingViewChart />
+                  <FlashTradeview />
                 </div>
               </div>
             </div>

@@ -7,7 +7,7 @@ function Structuremarket() {
 
   return (
     <>
-      <section className={`structure ${theme}`}>
+      <section className={`structure dark:text-white  dark:bg-black `}>
         {/* <p className="data">Market Data as on Date</p> */}
         <div><img className="struct_img" src="public/images/profilee.png" alt="profile" /></div>
 

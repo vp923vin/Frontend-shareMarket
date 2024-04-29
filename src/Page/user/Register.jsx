@@ -89,10 +89,10 @@ const Register = () => {
     <>
       <section className="">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0 ">
-          <a href="#" className="flex items-center mb-6 text-2xl font-semibold ">
+          {/* <a href="#" className="flex items-center mb-6 text-2xl font-semibold ">
             <img className="w-8 h-8 mr-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRslyrkMmax5h05xWdNaph4EYq4w-HblCwQPh_Lh-rWOw&s" alt="logo" />
             Star
-          </a>
+          </a> */}
           <div className="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="  text-center  text-2xl  font-medium leading-tight tracking-tigh">
@@ -100,29 +100,33 @@ const Register = () => {
               </h1>
               <form className="space-y-4 md:space-y-6">
                 <div>
-                  <label htmlFor="text" className="block mb-2 text-base font-medium  ">Your Name</label>
+                  <label htmlFor="text" className="block mb-2 text-base font-medium  "> Name</label>
                   <input type="text"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
-                    name="email" id="email" className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name" required="" />
+                    name="email" id="email" className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                    placeholder="Enter your name" required="" />
                   {errors.userName && <p className="text-red-500 text-xs">{errors.userName}</p>}
                 </div>
                 <div>
-                  <label htmlFor="email" className="block mb-2 text-base font-medium  ">Your Email</label>
+                  <label htmlFor="email" className="block mb-2 text-base font-medium  "> Email</label>
                   <input
                     value={userEmail}
                     onChange={(e) => setUserEmail(e.target.value)}
                     type='email'
                     required
-                    className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" />
+                    className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 
+                     dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                     placeholder="Enteryour email" />
                   {errors.userEmail && <p className="text-red-500 text-xs">{errors.userEmail}</p>}
                 </div>
                 <div>
-                  <label htmlFor="mobile" className="block mb-2 text-base font-medium  ">Your Mobile</label>
+                  <label htmlFor="mobile" className="block mb-2 text-base font-medium  "> Mobile</label>
                   <input
                     value={userMobile}
                     onChange={(e) => setUserMobile(e.target.value)}
-                    type="number" name="mobile" id="" className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="mobile number" required="" />
+                    type="number" name="mobile" id="" className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                    placeholder="Enter your number" required="" />
                   {errors.userMobile && <p className="text-red-500 text-xs">{errors.userMobile}</p>}
                 </div>
 
@@ -133,7 +137,8 @@ const Register = () => {
                     <input
                       value={userPassword}
                       onChange={(e) => setUserPassword(e.target.value)}
-                      type={showPasswordCurrent ? 'text' : 'password'} name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-gray-50 border border-gray-300  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                      type={showPasswordCurrent ? 'text' : 'password'} name="confirm-password" id="confirm-password"
+                       placeholder="Enter your password" className="bg-gray-50 border border-gray-300  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
                     {errors.userPassword && <p className="text-red-500 text-xs">{errors.userPassword}</p>}
                     <span
                       onClick={togglePasswordVisibilityCurrent}
@@ -149,7 +154,7 @@ const Register = () => {
                     <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300  dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
                   </div>
                   <div className="ml-3 text-base">
-                    <label htmlFor="terms" className="font-light ">I accept the <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
+                    <label htmlFor="terms" className="font-light ">I accept the <Link className="font-medium text-blue-600 hover:underline dark:text-blue-500" to="/term">Terms and Conditions</Link></label>
                   </div>
                 </div>
                 <button
