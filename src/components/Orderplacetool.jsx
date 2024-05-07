@@ -3,9 +3,10 @@ import "./Orderplace.css";
 import TradingViewChart from "../components/Chartview";
 import { useContextApi } from "./context/UseContext";
 import FlashTradeview from "./Stockchart/FlashTradeview";
+import { Link } from "react-router-dom";
 
 function Orderplacetool() {
-  const { theme } = useContextApi()
+  const { theme } = useContextApi();
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -18,8 +19,10 @@ function Orderplacetool() {
 
   return (
     <>
-      <section className={`order_tool_first dark:text-white  dark:bg-black  `}>
-        <div className="row">
+      <section
+        className={`  container-fluid  order_tool_first dark:text-white  dark:bg-black  `}
+      >
+        {/* <div className="row">
           <div className="col-12 col-lg-2 col-md-2">
             <h5 className="flas_mode">Flash Mode</h5>
           </div>
@@ -88,13 +91,13 @@ function Orderplacetool() {
                 <div className="d-flex">
                   <div className="col-6 buyy">
                     <button className="btn_trail_strt">Start Trail(+1)</button>
-                    {/* <button className="btn_indx">Limit</button> */}
+                  
                   </div>
                 </div>
                 <div className="d-flex">
                   <div className="col-6 buyy">
                     <button className="btn_setlot33">Turn of SL</button>
-                    {/* <button className="btn_indx">Limit</button> */}
+                   
                   </div>
 
                   <div className="col-6 d-flex buyy22">
@@ -110,7 +113,7 @@ function Orderplacetool() {
                 <div className="d-flex">
                   <div className="col-6 buyy">
                     <button className="btn_setlot3333">Turn of Target</button>
-                    {/* <button className="btn_indx">Limit</button> */}
+                  
                   </div>
                   <div className="col-6 d-flex buyy22">
                     <button className=" btn_trail_strt22" onClick={increment}>
@@ -125,10 +128,10 @@ function Orderplacetool() {
                 <div className="d-flex">
                   <div className="col-6 buyy">
                     <button className="btn_setlot_exit">Partial Exit</button>
-                    {/* <button className="btn_indx">Limit</button> */}
+                  
                   </div>
 
-                  {/* <div className="text-center"> */}
+                
                   <button className="Realize_btn">
                     Realized P&L
                     <br />
@@ -143,10 +146,9 @@ function Orderplacetool() {
                     </p>
                   </button>
 
-                  {/* </div> */}
-
+              
                   <div className="col-4 buyy22">
-                    {/* <button className="btn_trail_strt">Limit</button> */}
+                    
                     <button className="btn_default">Default Target-20</button>
                     <br />
                     <button className="btn_default">Default Target-20</button>
@@ -161,7 +163,7 @@ function Orderplacetool() {
                   <div className="d-flex">
                     <div className="col-6 notiii">
                       <button className="notifica_btn">Notification</button>
-                      {/* <button className="btn_indx">Limit</button> */}
+                     
                     </div>
                     <div className="col-6 order_book">
                       <button className="order_bokbtn">Order Book</button>
@@ -171,7 +173,7 @@ function Orderplacetool() {
                 </div>
               </div>
 
-              {/* chart */}
+          
               
               <div className="col-md-6 col-lg-6 col-12">
                 <div className="chart">
@@ -180,6 +182,97 @@ function Orderplacetool() {
               </div>
             </div>
           </div>
+        </div> */}
+
+        <div className=" flex justify-between  items-center">
+          <h1 className="text font-bold text-lg">Flash Trade</h1>
+
+          <div>
+            <div className="flex gap-4 ">
+              <Link
+                to="#"
+                className="bg-blue-900 rounded text-sm flex items-center px-4 text-white   "
+              >
+                Home
+              </Link>
+
+              <img className="w-8 h-8 rounded-full  bg-sky-50" src="" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div className=" grid grid-cols-2">
+          {/* left side content */}
+          <div className="grid grid-cols-2">
+            <div className="flex gap-2 items-center ">
+              <div class="w-28 ">
+                <label
+                  for="small"
+                  class="block  text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Lot Size(50)
+                </label>
+                <select
+                  id="small"
+                  class="block w-full p-1.5 mb-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  <option selected>Nifty-50</option>
+                  <option value="US">Nifty-50</option>
+                  <option value="CA">Canada</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                </select>
+                <label
+                  for="small"
+                  class="block  text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  20000
+                </label>
+              </div>
+              <div class="w-28 ">
+                <select
+                  id="small"
+                  class="block w-full p-1.5 mb-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  <option selected>20 july 2024</option>
+                  <option value="US">Nifty-50</option>
+                  <option value="CA">Canada</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="flex gap-2 items-center ">
+              <div class="w-28 ">
+                <label
+                  for="small"
+                  class="block  text-sm font-medium text-gray-900 dark:text-white"
+                >
+                 Set Lot Size 
+                </label>
+                <select
+                  id="small"
+                  class="block w-full p-1.5 mb-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  <option selected>1 to 300</option>
+                  <option value="US">Nifty-50</option>
+                  <option value="CA">Canada</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                </select>
+              
+              </div>
+              <div class="w-28 mt-3">
+              <button className="text-sm bg-blue-900 text-white px-2 py-1 rounded ">Kill Switch </button>
+              </div>
+            </div>
+
+            <div></div>
+          </div>
+
+          {/* right side content */}
+          <div></div>
         </div>
       </section>
     </>

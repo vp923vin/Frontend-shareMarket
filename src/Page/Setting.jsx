@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function LiveTradeSwitchCheckbox(props) {
+
   return (
     <div className="form-check form-switch">
       <input
@@ -22,6 +23,7 @@ function LiveTradeSwitchCheckbox(props) {
     </div>
   );
 }
+
 
 function PaperTradeSwitchCheckbox(props) {
   return (
@@ -40,6 +42,7 @@ function PaperTradeSwitchCheckbox(props) {
     </div>
   );
 }
+
 
 function Setting(props) {
 
@@ -65,13 +68,15 @@ function Setting(props) {
 
   return (
     <>
-      <div className={`clas  dark:text-white  dark:bg-black `}>
+      <div className={`clas  dark:text-white  dark:bg-gray-900 `}>
         <section className="class">
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-12">
                 <button className="appli_btn">Application Setting</button>
+                
                 <Link to ="/profile" className="prosetting_btn ">Profile Setting</Link>
+                
                 <img
                   className="setting_pro_img"
                   src="public/images/profilee.png"
@@ -128,7 +133,7 @@ function Setting(props) {
 
               <div className="col-lg-6 col-md-6 col-12 main_div">
                 <p className="broker_p">Broker configuration window</p>
-                <div className="row main_div_broker">
+                <div className="row main_div_broker bg-gray-100 px-2">
                   <div className="col-6 first_col">
                     <div className="row">
                       <div className="col-6">
@@ -179,8 +184,8 @@ function Setting(props) {
           <div class="container">
             <div class="row col-12">
               <div className="row table_bot_div">
-                <table>
-                  <thead>
+                <table className=" divide-y bg-gray-50 dark:text-white  dark:bg-gray-900  ">
+                  <thead className="bg-gray-400 dark:text-white  dark:bg-gray-900 ">
                     <tr className="tble_row">
                       <th> Broker</th>
                       <th>Broker Id</th>
@@ -192,7 +197,7 @@ function Setting(props) {
                     </tr>
                   </thead>
 
-                  <tbody>
+                  <tbody className="">
                     <tr className="table_setting">
                       <td>Kotak</td>
                       <td>User****</td>

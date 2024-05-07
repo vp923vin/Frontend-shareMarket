@@ -1,52 +1,93 @@
-import React, { useEffect, useRef } from 'react';
+import React from "react";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-function Chartview() {
-  const container = useRef(null);
+Chart.register(BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
-  useEffect(() => {
-    if (container.current) { // Ensure container is not null
-      const script = document.createElement('script');
-      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
-      script.type = 'text/javascript';
-      script.async = true;
-      script.innerHTML = `
+const BarChart = () => {
+  // Sample data for the last seven days (replace with actual data)
+  const lastSevenDays = [
+    "Day 1",
+    "Day 2",
+    "Day 3",
+    "Day 4",
+    "Day 5",
+    "Day 6",
+    "Day 7",
+  ];
+  const fiiActivity = [6000, 8000, 10000, 12000, 14000, 16000, 18000]; // FII activity for the last seven days
+  const diiActivity = [-1000, -2000, -3000, -4000, -5000, -6000, -7000]; // DII activity for the last seven days
+
+  const data = {
+    labels: lastSevenDays,
+    datasets: [
       {
-        "autosize": true,
-       "symbol": "NASDAQ:AAPL",
-        "interval": "D",
-        "timezone": "Etc/UTC",
-        "theme": "dark",
-        "style": "1",
-        "locale": "en",
-        "enable_publishing": false,
-        "save_image": false,
-        "hide_side_toolbar": true,
-       
-        "calendar": false,
-        "support_host": "https://www.tradingview.com"
-      }`;
+        label: "FII Activity",
+        data: fiiActivity,
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+      {
+        label: "DII Activity",
+        data: diiActivity,
+        backgroundColor: "rgba(54, 162, 235, 0.5)",
+      },
+    ],
+  };
 
-      container.current.appendChild(script);
-
-      // Cleanup to prevent duplication or resource leak
-      return () => {
-        if (container.current && container.current.contains(script)) {
-          container.current.removeChild(script);
-        }
-      };
-    }
-  }, []); // Dependency array to ensure it only runs once on mount
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Last Seven Days FII & DII Activity",
+      },
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = context.dataset.label || "";
+            if (label) {
+              label += ": ";
+            }
+            if (context.parsed.y !== null) {
+              label += `${Math.abs(context.parsed.y)} cr`;
+            }
+            return label;
+          },
+        },
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        stacked: true,
+        ticks: {
+          callback: function (value, index, values) {
+            return value + " cr";
+          },
+        },
+      },
+      x: {
+        stacked: true,
+      },
+    },
+  };
 
   return (
-    <div ref={container} style={{ height: '300px', width: '90%' }}>
-      
-      {/* <div className="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener noreferrer" target="_blank">
-          <span className="blue-text">Track all markets on TradingView</span>
-        </a>
-      </div> */}
+    <div className="">
+      <Bar data={data} options={options} />
     </div>
   );
-}
+};
 
-export default Chartview;
+export default BarChart;
