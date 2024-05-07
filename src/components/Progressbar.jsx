@@ -39,49 +39,49 @@ function Progressbar() {
 
     <>
       <div>
-        <div className="w-full bg-gray-200 h-6  mb-3 dark:bg-gray-700">
+        <div className="w-full bg-gray-50/90 h-6    dark:bg-gray-700">
           <div
-            className="bg-blue-600 h-6 text-white flex items-center justify-center"
+            className="bg-blue-400 h-6 text-white flex items-center justify-center"
             style={{ width: "80%" }}
           >
             85%
           </div>
         </div>
-        <div className="w-full bg-gray-200 h-6  mb-3 dark:bg-gray-700">
+        <div className="w-full bg-gray-50/90 h-6    dark:bg-gray-700">
           <div
-            className="bg-red-600 h-6 text-white flex items-center justify-center"
+            className="bg-pink-400 h-6 text-white flex items-center justify-center"
             style={{ width: " 80%" }}
           >
           80%
           </div>
         </div>
-        <div className="w-full bg-gray-200 h-6  mb-3 dark:bg-gray-700">
+        <div className="w-full bg-gray-50/90 h-6    dark:bg-gray-700">
           <div
-            className="bg-green-600 h-6 text-white flex items-center justify-center"
+            className="bg-green-300 h-6 text-white flex items-center justify-center"
             style={{ width: "70%" }}
           >
              70%
           </div>
         </div>
-        <div className="w-full bg-gray-200 h-6  mb-3 dark:bg-gray-700">
+        <div className="w-full bg-gray-50/90 h-6    dark:bg-gray-700">
           <div
-            className="bg-yellow-400 h-6 flex items-center justify-center"
+            className="bg-yellow-200 h-6 flex items-center justify-center"
             style={{ width: "50%" }}
           >
             50%
           </div>
         </div>
-        <div className="w-full bg-gray-200 h-6  mb-3 dark:bg-gray-700">
+        <div className="w-full bg-gray-50/90 h-6    dark:bg-gray-700">
           <div
-            className="bg-indigo-600 h-6 text-white flex items-center justify-center"
-            style={{ width: "45%" }}
+            className="bg-blue-300 h-6 text-white flex items-center justify-center"
+            style={{ width: "56%" }}
           >
             45%
           </div>
         </div>
-        <div className="w-full bg-gray-200 h-6 dark:bg-gray-700">
+        <div className="w-full bg-gray-50/90 h-6 dark:bg-gray-700">
           <div
-            className="bg-purple-600 h-6 text-white flex items-center justify-center"
+            className="bg-green-800 h-6 text-white flex items-center justify-center"
             style={{ width: "45%" }}
           >
             45%

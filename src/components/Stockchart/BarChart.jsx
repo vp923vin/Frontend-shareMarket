@@ -1,5 +1,5 @@
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import React from "react";
+import { Bar } from "react-chartjs-2";
 import {
   Chart,
   BarElement,
@@ -8,25 +8,23 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from "chart.js";
 
 Chart.register(BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
 const BarChart = () => {
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
     datasets: [
       {
-        label: 'Dataset Top',
-        data: [10, 20, 30, 40, 50, 60, 70],
-        borderColor: 'rgba(255, 99, 132, 1)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        label: "FII Activity",
+        data: [6000, 8000, 10000, 12000, 14000, 16000, 18000],
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
       {
-        label: 'Dataset Bottom',
-        data: [-10, -20, -30, -40, -50, -60, -70], // Negative values for bottom
-        borderColor: 'rgba(54, 162, 235, 1)',
-        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        label: "DII Activity",
+        data: [-1000, -2000, -3000, -4000, -5000, -6000, -7000],
+        backgroundColor: "rgba(54, 162, 235, 0.5)",
       },
     ],
   };
@@ -35,24 +33,31 @@ const BarChart = () => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
-        // text: 'Bar Chart with Centered Y-Axis',
+        text: "Last Seven Days FII & DII Activity",
       },
     },
     scales: {
       y: {
         beginAtZero: true,
-        min: -100, // Minimum value for y-axis
-        max: 100, // Maximum value for y-axis
+        stacked: true,
+        ticks: {
+          callback: function (value) {
+            return `${value} cr`;
+          },
+        },
+      },
+      x: {
+        stacked: true,
       },
     },
   };
 
   return (
-    <div>
+    <div style={{ width: "", height: "200px" }}>
       <Bar data={data} options={options} />
     </div>
   );

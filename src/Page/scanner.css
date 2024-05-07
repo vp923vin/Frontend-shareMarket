@@ -67,26 +67,6 @@ button.orderr_btn {
 
 
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
- 
-  
-  .table_bot_div {
-    padding: 50px 10px;
-  }
-
-  .row.toggle_bar {
-    padding-top: 70px;
-}
 
 
 
@@ -106,25 +86,6 @@ table {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   @media only screen and (max-width: 600px) {
-    th, td {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-    }
-  
-    th {
-      text-align: center;
-    }
+   
   }

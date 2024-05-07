@@ -117,7 +117,7 @@ const Register = () => {
                     required
                     className="border border-gray-900  sm:text-base rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 
                      dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                     placeholder="Enteryour email" />
+                     placeholder="Enter your email" />
                   {errors.userEmail && <p className="text-red-500 text-xs">{errors.userEmail}</p>}
                 </div>
                 <div>

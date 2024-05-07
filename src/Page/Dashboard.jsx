@@ -13,63 +13,14 @@ function Dashboard() {
 
   return (
     <>
-      <div className="  dark:text-white dark:bg-[#212529] h-full flex justify-center items-center overflow-auto    ">
+      <div className="  dark:text-white dark:bg-[#212529] h-screen flex justify-center    ">
         <div>
           <Header />
 
-          {
-          /* <section className={`first_dash_page ${theme}`}>
-        <div className="container_fluid">
-          <div className="row m-0">
-            <div className="col-6">
-              <TradingViewChart />
-            </div>
-            <div className="col-6 sec_col">
-              <div className="row m-0">
-                <div className="col-5">
-                  <img
-                    className="candle_img"
-                    src="./images/chart-candle.png"
-                    alt=""
-                  />
-                </div>
-                <div className="col-7 news">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.{" "}
-                  </p>
-                  <p>
-                    Velit quis enim omnis ut eaque veniam illum doloribus
-                    obcaecati saepe culpa?
-                  </p>
-                  <p>
-                    Velit quis enim omnis ut eaque veniam illum doloribus
-                    obcaecati saepe culpa?
-                  </p>
-                  <p>
-                    Velit quis enim omnis ut eaque veniam illum doloribus
-                    obcaecati saepe culpa?
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row m-0 py-4">
-            <div className="col-6">
-              <img
-                className="img-fluid"
-                src="./images/tradchart_img.png"
-                alt=""
-              />
-            </div>
-            <div className="col-6">
-              <Progressbar />
-            </div>
-          </div>
-        </div>
-      </section> */}
+       
 
-          <section className="container py-1 ">
-            <div className="grid grid-cols-1 lg:grid-cols-[45%_auto] md:gap- ">
+          <section className="container py-1">
+            <div className="grid grid-cols-1 lg:grid-cols-[45%_auto] md:gap-1  ">
               <div>
                 <Chartview />
               </div>
@@ -86,9 +37,9 @@ function Dashboard() {
                   /> */
                   }
 
-                    <h2 className="text-center text-sm ">
+                    {/* <h2 className="text-center text-sm ">
                       FII & DII combined activity for the last 7 days
-                    </h2>
+                    </h2> */}
                     {/* <FIIDIIChart data={data} options={options} />
                      */}
 
@@ -126,9 +77,10 @@ function Dashboard() {
             </div>
           </section>
 
-          <div className="container mt-3">
+          <div className="container mt-1  ">
             <TradingViewWidget />
           </div>
+          
         </div>
         
       </div>

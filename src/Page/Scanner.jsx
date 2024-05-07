@@ -1,12 +1,38 @@
 import React, { useState } from "react";
 import "../Page/scanner.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import { IoMenuSharp } from "react-icons/io5";
+import { Base_url } from "../components/context/config.url";
+import axios from "axios";
 
 function Scanner() {
+
+
   const [selectedSegment, setSelectedSegment] = useState("Nifty 500/Futures");
 
-  const [inputValue, setInputValue] = useState("");
+  const [openvalueGraternumber, setopenvalueGraternumber] = useState("");
+  const [closeGraternumber, setcloseGraternumber] = useState("");
+  const [monthlynumber, setmonthlynumber] = useState("");
+
+  const [Market_data, setMarket_data] = useState([]);
+
+  const itemsPerPage = 5;
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const data = [...Market_data];
+
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
+  const startindex = (currentPage - 1) * itemsPerPage;
+
+  const currentItems = data.slice(startindex, startindex + itemsPerPage);
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
 
   const [segments, setSegments] = useState([
     "Cash",
@@ -25,26 +51,40 @@ function Scanner() {
 
   const handleSegmentChange = (event) => {
     setSelectedSegment(event.target.value);
-    setInputValue("");
   };
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const GetStockData = async () => {
+    const payload = {
+      index: "Nifty 50",
+      volume_threshold: 500000,
+      rsi_threshold: 60,
+      close_number: 50,
+    };
+
+    try {
+      const response = await axios.post(`${Base_url}get-ls1-data`, payload, {
+        headers: {
+          "Content-Type": "application/json", // Corrected the Content-Type
+        },
+      });
+
+      setMarket_data(response.data.data);
+
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
-
-  const handleIncrement = () => {};
-
-  const handleDecrement = () => {};
 
   return (
     <>
-    <section className="scanner  text-black dark:text-white dark:bg-black  ">
+      <section className="scanner  text-black dark:text-white dark:bg-black  ">
         <div className="container">
           <div className="row">
-            <divv className="col-lg-2 col-md-2 col-12">
+            <div className="col-lg-2 col-md-2 col-12">
               <h5 className="scan_h dark:text-white">Scanner</h5>
-            </divv>
-            <divv className="col-lg-7 col-md-7 col-12">
+            </div>
+            <div className="col-lg-7 col-md-7 col-12">
               <h5 className="scan_h dark:text-white">Scanner name</h5>
               <p className="para_scan">
                 Scanner Description: A stock scanner,also known as a stock
@@ -52,10 +92,12 @@ function Scanner() {
                 to filter and identify stocs that meet specific criteria of
                 paramiters
               </p>
-            </divv>
+            </div>
 
             <div className="col-lg-2 col-md-2 col-12">
-              <h6 className="date_as dark:text-white">Market segments as on Date-time</h6>
+              <h6 className="date_as dark:text-white">
+                Market segments as on Date-time
+              </h6>
             </div>
             <div className="col-lg-1 col-md-1 propp">
               <img
@@ -67,12 +109,17 @@ function Scanner() {
           </div>
 
           <div className="w-full flex justify-end items-center  gap-3 py-2">
-         
-            <button className="add_to_bullis dark:text-white">Add to playbook</button>
-            <button className="add_to text-red-600"> <span className="text-green-400">Bullish/</span>Bullish</button>
+            <button className="add_to_bullis dark:text-white">
+              Add to playbook
+            </button>
+            <button className="add_to text-red-600">
+              {" "}
+              <span className="text-green-400">Bullish/</span>Bullish
+            </button>
           </div>
 
           <div className="row ">
+
             <div className="col-lg-2  col-md-2 py-2  btn_sca  ">
               <div className="flex items-center gap-2 ">
                 <span className="bg-blue-500 p-2 ">
@@ -128,6 +175,11 @@ function Scanner() {
               </div>
             </div>
 
+
+
+
+
+
             <div className="col-lg-10 col-md-10 col-12 ps-6 mt-6 lg:ps-16  feature_div">
               <p className=" text-sm flex items-center mb-2 dark:text-white">
                 {" "}
@@ -153,6 +205,8 @@ function Scanner() {
                 <input
                   type="number"
                   className="dark:bg-black  border border-blue-600 w-24 ml-2"
+                  value={openvalueGraternumber}
+                  onChange={(e) => setopenvalueGraternumber(e.target.value)}
                 />
               </p>
 
@@ -160,6 +214,8 @@ function Scanner() {
                 {" "}
                 Daily Close Greater than Number
                 <input
+                  value={closeGraternumber}
+                  onChange={(e) => setcloseGraternumber(e.target.value)}
                   type="number"
                   className="dark:bg-black  border border-blue-600 w-24  ml-2"
                 />
@@ -168,45 +224,29 @@ function Scanner() {
               <p className="text-sm flex items-center mb-2 dark:text-white">
                 {" "}
                 Monthly Rsi (14) Close Greater than equal to Number
-                <select
-                  id="stock-list"
-                  className="  dark:bg-black  border-1 mx-2 py-1  border-blue-700 focus:outline-none  text-sm block "
-                  value={selectedSegment}
-                  onChange={handleSegmentChange}
-                >
-                  {segments.map((segment) => (
-                    <option key={segment} value={segment}>
-                      {segment}
-                    </option>
-                  ))}
-                </select>
-              </p>
-
-              <p className="text-sm flex items-center mb-2 dark:text-white">
-                {" "}
-                Daily Close Greater than equal to 1 day age
-                <select
-                  id="stock-list"
-                  className="  dark:bg-black  border-1 mx-2 py-1  border-blue-700 focus:outline-none  text-sm block "
-                  value={selectedSegment}
-                  onChange={handleSegmentChange}
-                >
-                  {segments.map((segment) => (
-                    <option key={segment} value={segment}>
-                      {segment}
-                    </option>
-                  ))}
-                </select>
+                <input
+                  value={monthlynumber}
+                  type="number"
+                  className="dark:bg-black  border border-blue-600 w-24  ml-2"
+                  onChange={(e) => setmonthlynumber(e.target.value)}
+                />
               </p>
 
               <p className="text-sm flex items-center mb-2 dark:text-white">
                 Daily Greater than equal to 1 day ago High{" "}
               </p>
 
+              <button
+                onClick={GetStockData}
+                className="bg-blue-600 px-6 py-2 text-white rounded"
+              >
+                Run Scan
+              </button>
+
               {/* Table */}
 
-              <div className="row table_bot_div mt-6 ">
-                <table>
+              <div className="row  mt-6 ">
+                {/* <table>
                   <thead>
                     <tr>
                       <th className="dark:text-white"> Stock Name </th>
@@ -222,77 +262,120 @@ function Scanner() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="dark:text-white">TCS</td>
-                      <td className="dark:text-white">IT</td>
-                      <td className="dark:text-white">1000</td>
-                      <td className="dark:text-white">1200</td>
-                      <td className="dark:text-white">700</td>
-                      <td className="dark:text-white">100000</td>
-                      <td className="dark:text-white">1% </td>
-                      <td className="dark:text-white">09:20</td>
-                      <td className="dark:text-white">20/Dec/2023</td>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                    </tr>
-
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
+                    {Market_data.length > 0 &&
+                      Market_data.map((item) => {
+                        return (
+                          <tr>
+                            <td className="dark:text-white">{item["Stock Name"]}</td>
+                            <td className="dark:text-white">{item.Sector}</td>
+                            <td className="dark:text-white">{item.LTP}</td>
+                            <td className="dark:text-white">{item["52W High"]}</td>
+                            <td className="dark:text-white">{item["52W Low"]}</td>
+                            <td className="dark:text-white">{item.Volume}</td>
+                            <td className="dark:text-white">{item["Day Change %"]} </td>
+                            <td className="dark:text-white">{item["First Appeared on"]}</td>
+                            <td className="dark:text-white">{item["Dividend Date"]}</td>
+                          </tr>
+                        );
+                      })}
                   </tbody>
-                </table>
+                </table> */}
+
+                <div className="overflow-x-auto">
+                  {" "}
+                  {/* Enable horizontal scrolling */}
+                  <table className="min-w-full divide-y divide-gray-200">
+                    {" "}
+                    {/* Ensure table stretches to full width */}
+                    <thead className="bg-gray-100 dark:bg-gray-800">
+                      {" "}
+                      {/* Dark mode background */}
+                      <tr>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          Stock Name
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          Sector
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          LTP
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          52W High
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          52W Low
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          Volume
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          Day Change %
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          First Appeared On
+                        </th>
+                        <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
+                          Dividend Date
+                        </th>
+                        <th>
+                          <button className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 transition">
+                            Order
+                          </button>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white dark:bg-gray-900">
+                      {" "}
+                      {/* Dark mode for table body */}
+                      {data.length > 0 &&
+                        currentItems.map((item, index) => (
+                          <tr
+                            key={index}
+                            className="hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                          >
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item["Stock Name"]}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item.Sector}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item.LTP}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item["52W High"]}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item["52W Low"]}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item.Volume}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item["Day Change %"]}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item["First Appeared on"]}
+                            </td>
+                            <td className="px-4 py-2 text-gray-900 dark:text-white">
+                              {item["Dividend Date"]}
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
+
+
+
+
+
+
+
+
+
+               
               </div>
             </div>
           </div>
