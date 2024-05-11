@@ -1,93 +1,172 @@
-import React from "react";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import React from 'react'
 
-Chart.register(BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
-
-const BarChart = () => {
-  // Sample data for the last seven days (replace with actual data)
-  const lastSevenDays = [
-    "Day 1",
-    "Day 2",
-    "Day 3",
-    "Day 4",
-    "Day 5",
-    "Day 6",
-    "Day 7",
-  ];
-  const fiiActivity = [6000, 8000, 10000, 12000, 14000, 16000, 18000]; // FII activity for the last seven days
-  const diiActivity = [-1000, -2000, -3000, -4000, -5000, -6000, -7000]; // DII activity for the last seven days
-
-  const data = {
-    labels: lastSevenDays,
-    datasets: [
-      {
-        label: "FII Activity",
-        data: fiiActivity,
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "DII Activity",
-        data: diiActivity,
-        backgroundColor: "rgba(54, 162, 235, 0.5)",
-      },
-    ],
-  };
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Last Seven Days FII & DII Activity",
-      },
-      tooltip: {
-        callbacks: {
-          label: function (context) {
-            let label = context.dataset.label || "";
-            if (label) {
-              label += ": ";
-            }
-            if (context.parsed.y !== null) {
-              label += `${Math.abs(context.parsed.y)} cr`;
-            }
-            return label;
-          },
-        },
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        stacked: true,
-        ticks: {
-          callback: function (value, index, values) {
-            return value + " cr";
-          },
-        },
-      },
-      x: {
-        stacked: true,
-      },
-    },
-  };
-
+const demo = () => {
   return (
-    <div className="">
-      <Bar data={data} options={options} />
-    </div>
-  );
-};
+    <>
+    <div className="row">
+          <div className="col-12 col-lg-2 col-md-2">
+            <h5 className="flas_mode">Flash Mode</h5>
+          </div>
+          <div className="col-lg-8 col-md-8 col-12">
+            <button className="home_bottn">Home</button>
+          </div>
+          <div className="col-lg-2 col-md-2 col-12">
+            <img className="home_img" src="public/images/profilee.png" alt="" />
+          </div>
+        </div>
+        <button className="home_btn">Home</button>
+        <div className="container-fluid">
+          <div className="col-12">
+            <div className="row">
+              <div class="col-md-6 col-lg-6 col-12 white_bor">
+                Lot Size(50)
+                <div className="d-flex">
+                  <div className="col-6">
+                    <button className="btn_indx1">Index</button>
+                    <button className="btn_indx1">Expire Date</button>
+                  </div>
+                  <div className="col-6">
+                    <button className="btn_setlot">Set Lot Size</button>
+                    <button className="btn_setlot1">KILL SWITCH</button>
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <div className="col-6 buyy">
+                    <button className="btn_strike">
+                      <b className="bold">CE</b> Call strike selection
+                      <br />
+                      (Dropdown with search)
+                    </button>
+                    <button className="btn_ltp">LTP</button>
+                  </div>
+                  <div className="col-6 buyy ">
+                    <button className="btn_putstrike">
+                      <b className="bold2">PE</b> Put strike selection
+                      <br />
+                      (Dropdown with search)
+                    </button>
+                    <button className="btn_ltp">LTP</button>
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <div className="col-6 buyy">
+                    <button className="btn_setlot">BUY CE</button>
+                    <button className="btn_indx">SELL SE</button>
+                  </div>
+                  <div className="col-6 buyy">
+                    <button className="btn_setlot">BUY PE</button>
+                    <button className="btn_indx">SELL PE</button>
+                  </div>
 
-export default BarChart;
+                </div>
+                <div className="d-flex">
+                  <div className="col-6 buyy">
+                    <button className="btn_setlot_limit">Limit</button>
+                    <button className="btn_setlot_limit44">Limit</button>
+                  </div>
+                  <div className="col-6 buyy">
+                    <button className="btn_setlot_limit">Limit</button>
+                    <button className="btn_setlot_limit44">Limit</button>
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <div className="col-6 buyy">
+                    <button className="btn_trail_strt">Start Trail(+1)</button>
+                  
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <div className="col-6 buyy">
+                    <button className="btn_setlot33">Turn of SL</button>
+                   
+                  </div>
+
+                  <div className="col-6 d-flex buyy22">
+                    <button className=" btn_trail_strt22" onClick={increment}>
+                      +
+                    </button>
+                    <p className=" countting"> {count}</p>
+                    <button className="btn_indx_limit33" onClick={decrement}>
+                      -
+                    </button>
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <div className="col-6 buyy">
+                    <button className="btn_setlot3333">Turn of Target</button>
+                  
+                  </div>
+                  <div className="col-6 d-flex buyy22">
+                    <button className=" btn_trail_strt22" onClick={increment}>
+                      +
+                    </button>
+                    <p className=" countting"> {count}</p>
+                    <button className="btn_indx_limit33" onClick={decrement}>
+                      -
+                    </button>
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <div className="col-6 buyy">
+                    <button className="btn_setlot_exit">Partial Exit</button>
+                  
+                  </div>
+
+                
+                  <button className="Realize_btn">
+                    Realized P&L
+                    <br />
+                    <b>1000</b>
+                    <br />
+                    <b>-1000</b>
+                    <br />
+                    <p className="broker">
+                      Broker Name:
+                      <br />
+                      Net A\C balance:
+                    </p>
+                  </button>
+
+              
+                  <div className="col-4 buyy22">
+                    
+                    <button className="btn_default">Default Target-20</button>
+                    <br />
+                    <button className="btn_default">Default Target-20</button>
+                  </div>
+                </div>
+                <div className="message">
+                  <p className="commit_p">
+                    Symbol name | Net Qty | Avg Price | LTP | Buy Price | Sell
+                    Price | PNL{" "}
+                  </p>
+
+                  <div className="d-flex">
+                    <div className="col-6 notiii">
+                      <button className="notifica_btn">Notification</button>
+                     
+                    </div>
+                    <div className="col-6 order_book">
+                      <button className="order_bokbtn">Order Book</button>
+                      <button className="Discla_btn">Disclaimer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          
+              
+              <div className="col-md-6 col-lg-6 col-12">
+                <div className="chart">
+                  <FlashTradeview />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        </>
+  )
+}
+
+export default demo

@@ -26,12 +26,12 @@ import Profile from "./Page/Profile";
 import Faq from "./components/Faq";
 import Structuremarket from "./Page/Structuremarket";
 import Scanner from "./Page/Scanner";
-import Tradyportfolio from "./Page/Tradyportfolio";
 import Tradymarket from "./Page/Tradymarket";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import ScannerDashboard from "./Page/LiveScanner/ScannerDashboard";
 import Livescaner from "./Page/LiveScanner/Livescaner";
+import StockPortfolio from "./Page/StockPortfolio";
 
 function App() {
   return (
@@ -55,19 +55,21 @@ function App() {
         <Route path="/referral" element={<MyReferralPage />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/order" element={<Orderplacetool />} />
+        <Route path="/flash-trade" element={<Orderplacetool />} />
         <Route path="/setting" element={<Setting />} />
         <Route path="/market-structure" element={<Structuremarket />} />
         {/* <Route path="/scaner" element={<Scanner />} /> */}
         <Route path="/profile" element={<Profile />} />
         <Route path="/tradymarket" element={<Tradymarket />} />
-        <Route path="/portfolio" element={<Tradyportfolio />} />
+        
+        <Route path="/portfolio" element={<StockPortfolio />} />
         <Route path="/home" element={<Home />} />
         <Route path="/faq" element={<Faq />} />
 
         <Route path="/features" element={<Features />} />
 
         <Route path="/scaner" element={<ScannerDashboard />}>
+
           <Route index element={<Livescaner />} />
         </Route>
 

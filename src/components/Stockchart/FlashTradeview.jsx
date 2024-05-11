@@ -51,7 +51,7 @@ function FlashTradeview() {
   }, []); // Dependency array ensures this runs once on component mount
 
   return (
-    <div ref={container} style={{ height: '500px', width: '100%' }}>
+    <div ref={container} style={{ height: '90vh', width: '100%' }}>
 
     </div>
   );

@@ -1,161 +1,138 @@
-import React from "react";
-import "../Page/Profile.css";
-import { useContextApi } from "../components/context/UseContext";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 
-function SwitchCheckbox(props) {
+const StockPortfolio = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [portfolioType, setPortfolioType] = useState('equity');
+  const [newEntry, setNewEntry] = useState({
+    entryDate: '',
+    stock: '',
+    quantity: '',
+    entryPrice: '',
+    LTP: '',
+    todayGainPercent: '',
+    unrealizedGain: '',
+    currentValue: '',
+    exitPrice: '',
+    exitDate: '',
+    amountInvested: '',
+    totalDays: '',
+    cashMargin: ''
+  });
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handlePortfolioTypeChange = (e) => {
+    setPortfolioType(e.target.value);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewEntry({ ...newEntry, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log(newEntry);
+    // Reset form fields
+    setNewEntry({
+      entryDate: '',
+      stock: '',
+      quantity: '',
+      entryPrice: '',
+      LTP: '',
+      todayGainPercent: '',
+      unrealizedGain: '',
+      currentValue: '',
+      exitPrice: '',
+      exitDate: '',
+      amountInvested: '',
+      totalDays: '',
+      cashMargin: ''
+    });
+    // Close modal
+    setIsOpen(false);
+  };
+
   return (
-    <div className="form-check form-switch checkBox-in">
-      <input
-        className="form-check-input"
-        type="checkbox"
-        role="switch"
-        id={props.id}
-        checked={props.checked}
-        disabled={props.disabled}
-        onChange={props.onChange}
-      />
-      <label className="form-check-label" htmlFor={props.id}>
-        {props.label}
-      </label>
-    </div>
-  );
-}
+    <div className="container mx-auto">
+      <div className="overflow-x-auto">
+        <table className="table-auto min-w-full border-collapse border border-gray-300">
+          <thead>
+            <tr>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Entry date</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Stock</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Quantity</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Entry Price</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">LTP</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Today's gain%</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Unrealized gain</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Current Value</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Exit Price</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Exit Date</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Amount Invested</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Total Days</th>
+              <th className="px-4 py-2 bg-gray-200 border border-gray-300">Cash Margin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Table rows will go here */}
+          </tbody>
+        </table>
+      </div>
 
-function Profile(props) {
-  const { theme, toggleTheme } = useContextApi();
+      <button onClick={toggleModal} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+        Add New
+      </button>
 
-  return (
-    <>
-      <section
-        className={`profile_page relative  dark:text-white dark:bg-[#212529]  `}
-      >
-        <div className="container">
-          <div className="row align-items-center input_forms_row">
-            <div className="col-lg-2">
-              <img src="public/images/profilee.png" alt="profile" />
-            </div>
-            <div className="col-12 col-lg-8 mt-2 lg:mt-0">
-              <form action="" className="profile-form">
-                <div className="row">
-                  <div className="mb-4">
-                    <input
-                      type="text"
-                      className="border-2  w-full sm:w-auto border-gray-500 focus:outline-slate-700 dark:border-blue-700 px-3.5 lg:px-[2.2rem]  bg-transparent py-1.5 "
-                      name=""
-                      placeholder=" Name"
-                    />
-                  </div>
+      {/* Modal */}
+      {isOpen && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="bg-white rounded shadow-md p-8">
+              <h2 className="text-xl font-bold mb-4">Add New Entry</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label htmlFor="entryDate" className="block text-sm font-medium text-gray-700">Entry Date</label>
+                  <input type="text" id="entryDate" name="entryDate" value={newEntry.entryDate} onChange={handleInputChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:col-span-3 gap-3 sm:gap-4">
-                  <div className=" mb-4">
-                    <input
-                      className="border-2 w-full border-gray-500 focus:outline-slate-700 dark:border-blue-700 px-3.5 bg-transparent py-1.5 "
-                      type="number"
-                      name=""
-                      placeholder="Whatsapp Number"
-                    />
-                  </div>
-                  <div className="">
-                    <input
-                      className="border-2 border-gray-500 w-full focus:outline-slate-700 dark:border-blue-700 px-3.5 bg-transparent py-1.5 "
-                      type="text"
-                      name=""
-                      placeholder="Current Password"
-                    />
-                  </div>
-
-                  <div className="">
-                    <input
-                      className="border-2 w-full border-gray-500 focus:outline-slate-700 dark:border-blue-700 px-3.5 bg-transparent py-1.5 "
-                      type="text"
-                      name=""
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="">
-                    <input
-                      className="border-2  w-full border-gray-500 focus:outline-slate-700 dark:border-blue-700 px-3.5 bg-transparent py-1.5 "
-                      type="password"
-                      name=""
-                      placeholder="New Password"
-                    />
-                  </div>
-
-                  <div className="">
-                    <input
-                      className="border-2 w-full border-gray-500 focus:outline-slate-700 dark:border-blue-700 px-3.5 bg-transparent py-1.5 "
-                      type="text"
-                      name=""
-                      placeholder="City (Search With Country)"
-                    />
-                  </div>
-                  <div className="">
-                    <input
-                      className="border-2 w-full border-gray-500 focus:outline-slate-700 dark:border-blue-700 px-3.5 bg-transparent py-1.5 "
-                      type="password"
-                      name=""
-                      placeholder="Confirm New Password"
-                    />
-                  </div>
+                <div className="mb-4">
+                  <label htmlFor="stock" className="block text-sm font-medium text-gray-700">Stock</label>
+                  <input type="text" id="stock" name="stock" value={newEntry.stock} onChange={handleInputChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
+                <div className="mb-4">
+                  <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">Quantity</label>
+                  <input type="text" id="quantity" name="quantity" value={newEntry.quantity} onChange={handleInputChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                </div>
+                {/* Include other input fields similarly */}
+                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
               </form>
-            </div>
-
-            <div className="col-lg-2">
-              <p className="my_plan border-2 border-gray-500 focus:outline-slate-700 dark:border-blue-700  ">
-                My Plan validity deatils
-              </p>
-            </div>
-          </div>
-
-          {/* <div className=" button_off mt-5"> */}
-          <div className="row button_off">
-            <div className="col-sm-5">
-              <SwitchCheckbox
-                id="themeSwitch"
-                checked={theme === "dark"}
-                onChange={toggleTheme}
-                label={
-                  theme === "light"
-                    ? "Change to dark theme"
-                    : "Change to light theme"
-                }
-              />
-            </div>
-            <div className="col-sm-5 checkBox-btn2">
-              <SwitchCheckbox
-                className="live_tr"
-                id="flexSwitchCheckDefault"
-                label=" Diasable the scroll on dashboard "
-              />
-            </div>
-          </div>
-          {/* </div> */}
-
-          <div className="container footer-menu">
-            <div className="menu">
-              <ul>
-                <li>My Referral</li>
-                <li>Help</li>
-                <li>
-                  <Link to="/about-us">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/feedback">Feedback</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact Us</Link>
-                </li>
-                <li></li>
-              </ul>
+              <button onClick={toggleModal} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mt-2">Cancel</button>
             </div>
           </div>
         </div>
-      </section>
-    </>
-  );
-}
+      )}
 
-export default Profile;
+      {/* Dropdown for Portfolio Type */}
+      <div>
+        <label htmlFor="portfolioType" className="block text-sm font-medium text-gray-700">
+          Portfolio Type
+        </label>
+        <select
+          id="portfolioType"
+          name="portfolioType"
+          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          value={portfolioType}
+          onChange={handlePortfolioTypeChange}
+        >
+          <option value="equity">Equity</option>
+          <option value="options">Options</option>
+        </select>
+      </div>
+    </div>
+  );
+};
+
+export default StockPortfolio;
